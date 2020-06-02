@@ -1,0 +1,14 @@
+/* @keyframes drive {
+  0% { transform: translateX(10px); }
+  25% { transform: translateX(20px); }
+  75% { transform: translateX(50px); }
+  100% { transform: translateX(100px); }
+  0% { opacity: 1; }
+  10% { opacity: 1; }
+  15% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+#CAR:hover {
+  animation: drive 2s ease alternate;
+} */

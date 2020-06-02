@@ -1,0 +1,33 @@
+.socials {
+  float: left;
+}
+
+.socials > ul {
+  margin-left: 0px;
+}
+
+.links > ul {
+  float: right;
+}
+
+.link {
+  display: inline-block;
+  text-decoration: none;
+  padding-right: 16px;
+  margin: 0px;
+  font-size: 1.5em;
+}
+
+
+.footerDes {
+  display: block;
+  line-height: 20px;
+  font-weight: 400;
+  font-size: 0.7em;
+  font-family: Helvetica
+}
+
+.footerLinks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
