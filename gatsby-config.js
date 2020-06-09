@@ -4,9 +4,28 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Madamot`,
+    menuLinks:[
+      {
+         name:'home',
+         link:'/'
+      },
+      {
+         name:'about',
+         link:'/about'
+      },
+      {
+         name:'project',
+         link:'/project'
+      },
+      {
+         name:'blog',
+         link:'/blog'
+      },
+    ],
+    description: `My name is Adam Horne. I create digital products to help businesses be more efficient and provide better experiences to their end-users. I’m a dedicated Digital Media Development student building full stack apps and websites, specialising in React, React Native and Django.`,
+    author: `Adam Horne`,
+    tags: ["portfolio", "software developer", "developer", "web developer", "app developer"]
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -39,6 +58,7 @@ module.exports = {
         schemas: {
           homepage: require('./src/schemas/home.json'),
           blog: require('./src/schemas/blog.json'),
+          project: require('./src/schemas/project.json'),
          // blog_post: require('./src/schemas/blog_post.json'),
        }
         // linkResolver: ({ node, key, value }) => post => `/${post.uid}`,

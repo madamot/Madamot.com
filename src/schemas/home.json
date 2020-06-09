@@ -8,12 +8,180 @@
         "placeholder": "Title of website"
       }
     },
+    "slogan": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading5",
+        "label": "Slogan",
+        "placeholder": "Slogan"
+      }
+    },
+    "subtitle": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading3",
+        "label": "Subtitle",
+        "placeholder": "Subtitle"
+      }
+    },
     "description": {
       "type": "StructuredText",
       "config": {
         "multi": "paragraph, strong, em, hyperlink, list-item, o-list-item",
         "label": "Description",
         "placeholder": "website description"
+      }
+    },
+    "services": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "service": {
+            "type": "StructuredText",
+            "config": {
+              "single": "heading3",
+              "label": "Service",
+              "placeholder": "Service"
+            }
+          },
+          "service_description": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "paragraph",
+              "label": "Service Description",
+              "placeholder": "Description of service offered"
+            }
+          }
+        },
+        "label": "Services"
+      }
+    },
+    "techsubtitle": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph",
+        "label": "TechSubTitle",
+        "placeholder": "Technology Sub Title"
+      }
+    },
+    "technology": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+        "label": "Technology",
+        "placeholder": "Technology we use"
+      }
+    },
+    "technologydescription": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading6",
+        "label": "TechnologyDescription",
+        "placeholder": "Technology description"
+      }
+    },
+    "tech": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "languageimg": {
+            "type": "Image",
+            "config": {
+              "constraint": {
+                "width": 250,
+                "height": 250
+              },
+              "thumbnails": [],
+              "label": "LanguageImg"
+            }
+          },
+          "techtitle": {
+            "type": "StructuredText",
+            "config": {
+              "single": "heading3",
+              "label": "TechTitle"
+            }
+          },
+          "language": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "paragraph, preformatted, strong, em, hyperlink, image, list-item",
+              "label": "Language",
+              "placeholder": "Language/framework"
+            }
+          }
+        },
+        "label": "Tech"
+      }
+    },
+    "recent_projects": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1",
+        "label": "Recent Projects",
+        "placeholder": "Recent Projects"
+      }
+    },
+    "recent_projects_subtitle": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading3",
+        "label": "Recent Projects Subtitle",
+        "placeholder": "Recent Projects Subtitle"
+      }
+    },
+    "projects": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "project": {
+            "type": "Link",
+            "config": {
+              "select": "document",
+              "customtypes": [
+                "project"
+              ],
+              "label": "Project",
+              "placeholder": "Recent Projects"
+            }
+          }
+        },
+        "label": "Projects"
+      }
+    },
+    "recent_blog_posts": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1",
+        "label": "Recent Blog Posts",
+        "placeholder": "Recent Blog Posts"
+      }
+    },
+    "recent_blog_posts_subtitle": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading3",
+        "label": "Recent Blog Posts Subtitle",
+        "placeholder": "Recent Blog Posts Subtitle"
+      }
+    },
+    "blogs": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "blog": {
+            "type": "Link",
+            "config": {
+              "select": "document",
+              "customtypes": [
+                "blog"
+              ],
+              "label": "Blog",
+              "placeholder": "Recent blogs"
+            }
+          }
+        },
+        "label": "Blogs"
       }
     }
   }

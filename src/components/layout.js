@@ -10,8 +10,9 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
-import "./layout.css"
-import "./footer.css"
+import Footer from "./footer"
+import "../styles/layout.css"
+import "../styles/footer.css"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -19,6 +20,10 @@ const Layout = ({ children }) => {
       site {
         siteMetadata {
           title
+          menuLinks {
+            name
+            link
+          }
         }
       }
     }
@@ -26,7 +31,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header menuLinks={data.site.siteMetadata.menuLinks} siteTitle={data.site.siteMetadata.title} />
       <div
         style={{
           margin: `0 auto`,
@@ -35,31 +40,7 @@ const Layout = ({ children }) => {
         }}
       >
         <main>{children}</main>
-        <footer>
-          <div className="footerLinks">
-            <div className="footerDes">
-              <p className="footerDesText"><strong>Madamot</strong> is a Digital Agency founded by Adam Horne from London England. We create digital products to help businesses be more efficient and provide better experiences to their end-users. We build full stack apps and websites, specialising in React, React Native and Django.</p>
-            </div>
-            <div></div>
-            <div className="socials">
-              <ul>
-                <a target="_blank" rel="noreferrer" href="https://www.instagram.com/adam.madamot/"><li className="link insta">instagram</li></a>
-                <a target="_blank" rel="noreferrer" href="https://github.com/madamot"><li className="link git">Github</li></a>
-                <a target="_blank" rel="noreferrer" href="https://www.facebook.com/madamots/"><li className="link fb">Facebook</li></a>
-              </ul>
-            </div>
-            <div className="links">
-              <ul>
-                <li className="link">links</li>
-                <li className="link">links</li>
-                <li className="link">links</li>
-              </ul>
-            </div>
-          </div>
-
-          <hr />
-          <h5>© {new Date().getFullYear()} Madamot.</h5>
-        </footer>
+        <Footer menuLinks={data.site.siteMetadata.menuLinks} />
       </div>
     </>
   )

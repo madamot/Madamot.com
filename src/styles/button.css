@@ -1,0 +1,29 @@
+.button {
+  padding: .75rem 4rem .75rem 3rem;
+  border-radius: 9999px;
+  border: 0.25rem solid #1daee0;
+  background-color: #1daee0;
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  text-align: center;
+  font-weight: 700;
+  display: inline-block;
+  font-size: 1.125rem;
+  transition: 0.3s;
+}
+
+.button:hover {
+  background-color: black;
+  border: 0.25rem solid black;
+  color: #fff;
+}
+
+span {
+  margin-left: 10px;
+  transition: 0.3s;
+  position: absolute;
+}
+
+.button:hover span {
+  transform: translateX(60%);
+}
