@@ -82,7 +82,8 @@ const IndexPage = ({data: {prismicHomepage}})  => {
           {data.blogs.map(blog => (
             <div className="projectCard">
               <h5>{blog.blog.document.data.title.text}</h5>
-
+              <img src={blog.blog.document.data.blog_image.url} alt="" />
+              <p>{blog.blog.document.data.description.text}</p>
               <SeeMoreButton type={blog.blog.document.type} url={blog.blog.document.uid}>
                 See More
               </SeeMoreButton>
@@ -178,9 +179,16 @@ export const homeQuery = graphql`
                   title {
                     text
                   }
+                  description {
+                    text
+                  }
+                  blog_image {
+                    url
+                  }
                 }
                 uid
                 type
+                tags
               }
             }
           }
