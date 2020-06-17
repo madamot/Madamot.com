@@ -99,7 +99,8 @@
               "name": "terminal",
               "display": "terminal"
             }
-          ]
+          ],
+          "embeded_video": []
         },
         "choices": {
           "text": {
@@ -152,7 +153,13 @@
                     "width": 1500,
                     "height": 750
                   },
-                  "thumbnails": [],
+                  "thumbnails": [
+                    {
+                      "name": "Smaller",
+                      "width": 750,
+                      "height": 750
+                    }
+                  ],
                   "label": "Image"
                 }
               }
@@ -172,6 +179,23 @@
                   "multi": "preformatted",
                   "label": "Code snippet",
                   "placeholder": "Add code here"
+                }
+              }
+            }
+          },
+          "embeded_video": {
+            "type": "Slice",
+            "fieldset": "Embeded Video",
+            "description": "YouTube video etc.",
+            "icon": "video_library",
+            "display": "list",
+            "non-repeat": {},
+            "repeat": {
+              "video": {
+                "type": "Embed",
+                "config": {
+                  "label": "Video",
+                  "placeholder": "iFrame"
                 }
               }
             }

@@ -7,6 +7,7 @@ import SEO from "../components/seo"
 import Text from "../components/slices/Text"
 import Code from "../components/slices/Code"
 import Image from "../components/slices/Image"
+import Video from "../components/slices/Video"
 
 import "../styles/templates/blogPage.css"
 
@@ -16,19 +17,29 @@ const PostSlices = ({ slices }) => {
       switch(slice.slice_type) {
         case 'text': return (
           <div key={ index } className="slice">
-            { <Text slice={ slice } /> }
+            { <Text key={index} slice={ slice } /> }
           </div>
         )
 
         case 'code_snippet': return (
           <div key={ index } className="slice">
-            { <Code slice={ slice } /> }
+            {slice.items.map(code => (
+              <Code key={index} slice={ code } language={ slice.slice_label } />
+            ))}
           </div>
         )
 
         case 'image': return (
           <div key={ index } className="slice">
-            { <Image slice={ slice } /> }
+            { <Image key={index} slice={ slice } /> }
+          </div>
+        )
+
+        case 'embeded_video': return (
+          <div key={ index } className="slice">
+            {slice.items.map(video => (
+              <Video key={index} slice={ video } />
+            ))}
           </div>
         )
 
@@ -41,20 +52,25 @@ const PostSlices = ({ slices }) => {
 
 const PostBody = ({ blogPost }) => {
 // const titled = blogPost.title.length !== 0;
-console.log(blogPost);
+// console.log(blogPost);
 
   return (
-    <div className="content-container">
+    <div>
       <div>
-        <div>
-          <h6>{blogPost.tags}</h6>
-          <h1>{blogPost.data.title.text}</h1>
-          <h4>{blogPost.data.description.text}</h4>
-          <h6>{blogPost.data.date}</h6>
-        </div>
-        <img className="image" src={blogPost.data.blog_image.url} />
+        <h6>{blogPost.tags}</h6>
+        <h1>{blogPost.data.title.text}</h1>
+        <h4>{blogPost.data.description.text}</h4>
+        <h6>{blogPost.data.date}</h6>
       </div>
-      <PostSlices slices={ blogPost.data.body }/>
+      <div className="content-container">
+        <div className="content-body">
+          <div>
+
+            <img className="image" src={blogPost.data.blog_image.url} />
+          </div>
+          <PostSlices slices={ blogPost.data.body }/>
+        </div>
+      </div>
     </div>
   )
 }
@@ -119,6 +135,15 @@ query BlogPostQuery($uid: String) {
               items {
                 image {
                   url
+                }
+              }
+            }
+            ... on PrismicBlogBodyEmbededVideo {
+              id
+              slice_type
+              items {
+                video {
+                  html
                 }
               }
             }
