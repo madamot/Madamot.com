@@ -8,7 +8,7 @@ const Header = ({ siteTitle, menuLinks }) => (
   <header
     style={{
       marginBottom: `1.45rem`,
-      borderBottom: '0.2px solid grey',
+      // borderBottom: '0.2px solid grey',
     }}
   >
     <div

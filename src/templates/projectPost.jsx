@@ -2,32 +2,90 @@ import React from "react"
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
 
-const Post = ({ data: { prismicProject } }) => {
-  const { data } = prismicProject
+import PostBody from "../components/PostBody"
 
-  return (
-    <React.Fragment>
-      <Layout>
-        <SEO title="{data.title.uid}" />
-        <h1>{data.title.text}</h1>
-      </Layout>
-    </React.Fragment>
+import "../styles/templates/blogPage.css"
+
+
+export default (props) => {
+  // console.log(props);
+  const doc = props.data.allPrismicProject.edges.slice(0,1).pop();
+
+  if (!doc) return null;
+
+  return(
+    <Layout>
+      <PostBody blogPost={ doc.node } />
+    </Layout>
   )
 }
 
-export default Post
-
 export const pageQuery = graphql`
-  query ProjectBySlug($uid: String!) {
-    prismicProject(uid: { eq: $uid }) {
-      uid
-      data {
-        title {
-          text
+query ProjectPostQuery($uid: String) {
+  allPrismicProject(filter: {uid: {eq: $uid}}) {
+    edges {
+      node {
+        uid
+        type
+        id
+        tags
+        data {
+          title {
+            text
+          }
+          image {
+            url
+          }
+          description {
+            text
+          }
+          date
+          body {
+            ... on PrismicProjectBodyText {
+              id
+              slice_type
+              slice_label
+              primary {
+                text {
+                  html
+                }
+              }
+            }
+            ... on PrismicProjectBodyCodeSnippet {
+              id
+              slice_type
+              slice_label
+              items {
+                code_snippet {
+                  text
+                }
+              }
+            }
+            ... on PrismicProjectBodyImage {
+              id
+              slice_type
+              slice_label
+              items {
+                image {
+                  url
+                }
+              }
+            }
+            ... on PrismicProjectBodyEmbededVideo {
+              id
+              slice_type
+              slice_label
+              items {
+                video {
+                  html
+                }
+              }
+            }
+          }
         }
       }
     }
   }
+}
 `

@@ -1,79 +1,12 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
 
-import Text from "../components/slices/Text"
-import Code from "../components/slices/Code"
-import Image from "../components/slices/Image"
-import Video from "../components/slices/Video"
+import PostBody from "../components/PostBody"
 
 import "../styles/templates/blogPage.css"
 
-const PostSlices = ({ slices }) => {
-  return slices.map((slice, index) => {
-    const res = (() => {
-      switch(slice.slice_type) {
-        case 'text': return (
-          <div key={ index } className="slice">
-            { <Text key={index} slice={ slice } /> }
-          </div>
-        )
-
-        case 'code_snippet': return (
-          <div key={ index } className="slice">
-            {slice.items.map(code => (
-              <Code key={index} slice={ code } language={ slice.slice_label } />
-            ))}
-          </div>
-        )
-
-        case 'image': return (
-          <div key={ index } className="slice">
-            { <Image key={index} slice={ slice } /> }
-          </div>
-        )
-
-        case 'embeded_video': return (
-          <div key={ index } className="slice">
-            {slice.items.map(video => (
-              <Video key={index} slice={ video } />
-            ))}
-          </div>
-        )
-
-        default: return
-      }
-    })();
-    return res;
-  })
-}
-
-const PostBody = ({ blogPost }) => {
-// const titled = blogPost.title.length !== 0;
-// console.log(blogPost);
-
-  return (
-    <div>
-      <div>
-        <h6>{blogPost.tags}</h6>
-        <h1>{blogPost.data.title.text}</h1>
-        <h4>{blogPost.data.description.text}</h4>
-        <h6>{blogPost.data.date}</h6>
-      </div>
-      <div className="content-container">
-        <div className="content-body">
-          <div>
-
-            <img className="image" src={blogPost.data.blog_image.url} />
-          </div>
-          <PostSlices slices={ blogPost.data.body }/>
-        </div>
-      </div>
-    </div>
-  )
-}
 
 export default (props) => {
   // console.log(props);
@@ -101,7 +34,7 @@ query BlogPostQuery($uid: String) {
           title {
             text
           }
-          blog_image {
+          image {
             url
           }
           description {

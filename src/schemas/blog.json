@@ -38,12 +38,12 @@
         "placeholder": "Short description for the project in thumbnail"
       }
     },
-    "blog_image": {
+    "image": {
       "type": "Image",
       "config": {
         "constraint": {
-          "width": 1500,
-          "height": 750
+          "width": null,
+          "height": null
         },
         "thumbnails": [],
         "label": "Blog Image"
