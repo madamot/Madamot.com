@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
-import Markdown from "react-markdown"
-import { RichText } from "prismic-reactjs"
+// import Markdown from "react-markdown"
+// import { RichText } from "prismic-reactjs"
 import Prism from "prismjs"
 
 import "prismjs/components/prism-jsx.js"

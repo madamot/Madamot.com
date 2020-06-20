@@ -25,7 +25,11 @@ const PostSlices = ({ slices }) => {
 
         case 'image': return (
           <div key={ index } className="slice">
-            { <Image key={index} slice={ slice } /> }
+            { <Image key={index} slice={ slice } style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }} /> }
           </div>
         )
 

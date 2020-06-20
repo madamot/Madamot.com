@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 
 import PostSlices from "../components/PostSlices"
 
@@ -13,7 +14,9 @@ const PostBody = ({ blogPost }) => {
           paddingTop: `4rem`,
           paddingBottom: `2rem`,
         }}>
-        <h6>Home > {blogPost.type}</h6>
+
+
+        <h6><Link to="/">Home</Link> > <Link to={blogPost.type}>{blogPost.type}s</Link></h6>
         <h1>{blogPost.data.title.text}</h1>
         <h4>{blogPost.data.description.text}</h4>
         <h6>{blogPost.data.date}  |  {blogPost.tags}</h6>
@@ -26,7 +29,7 @@ const PostBody = ({ blogPost }) => {
         <div className="content-body">
           <div>
 
-            <img className="image" src={blogPost.data.image.url} />
+            <img className="image" alt="" src={blogPost.data.image.url} />
           </div>
           <PostSlices slices={ blogPost.data.body }/>
         </div>

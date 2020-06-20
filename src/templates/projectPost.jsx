@@ -2,6 +2,8 @@ import React from "react"
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
+import Loading from '../components/Loading';
+
 
 import PostBody from "../components/PostBody"
 
@@ -12,7 +14,7 @@ export default (props) => {
   // console.log(props);
   const doc = props.data.allPrismicProject.edges.slice(0,1).pop();
 
-  if (!doc) return null;
+  if (!doc) return <Loading />;
 
   return(
     <Layout>

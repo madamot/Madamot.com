@@ -25,7 +25,7 @@
       "config": {
         "select": "document",
         "customtypes": [
-          "blog"
+          "tag"
         ],
         "label": "Category"
       }

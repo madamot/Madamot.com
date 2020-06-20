@@ -59,6 +59,7 @@ module.exports = {
           homepage: require('./src/schemas/home.json'),
           blog: require('./src/schemas/blog.json'),
           project: require('./src/schemas/project.json'),
+          tag: require('./src/schemas/tag.json'),
          // blog_post: require('./src/schemas/blog_post.json'),
        }
         // linkResolver: ({ node, key, value }) => post => `/${post.uid}`,
