@@ -15,7 +15,7 @@ const Blog = ({data: {allPrismicBlog}}) => (
     <div className="projectGrid">
       {allPrismicBlog.edges.map(blog => (
         <Link to={blog.node.type+"/"+blog.node.uid} key={blog.node.uid} className="project">
-          <h3>{blog.node.data.title.text}</h3>
+          <h2>{blog.node.data.title.text}</h2>
         </Link>
       ))}
     </div>

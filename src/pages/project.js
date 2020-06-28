@@ -32,7 +32,7 @@ const Projects = ({data: {allPrismicProject}})  => {
       <div className="projectGrid">
         {allPrismicProject.edges.map(project => (
           <Link to={"/"+project.node.type+"/"+project.node.uid} key={project.node.uid} className="project">
-            <h3>{project.node.data.title.text}</h3>
+            <h2>{project.node.data.title.text}</h2>
           </Link>
         ))}
       </div>

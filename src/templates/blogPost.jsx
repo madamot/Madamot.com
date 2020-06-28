@@ -81,6 +81,9 @@ query BlogPostQuery($uid: String) {
               }
             }
           }
+          category {
+            slug
+          }
         }
       }
     }

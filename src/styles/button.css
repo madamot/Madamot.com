@@ -12,7 +12,27 @@
   transition: 0.3s;
 }
 
+.readbutton {
+  padding: .45rem 2rem .45rem 1.5rem;
+  border-radius: 9999px;
+  border: 0.25rem solid #1daee0;
+  background-color: #1daee0;
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  text-align: center;
+  font-weight: 700;
+  display: inline-block;
+  font-size: 0.76rem;
+  transition: 0.3s;
+}
+
 .button:hover {
+  background-color: black;
+  border: 0.25rem solid black;
+  color: #fff;
+}
+
+.readbutton:hover {
   background-color: black;
   border: 0.25rem solid black;
   color: #fff;
@@ -25,5 +45,9 @@ span {
 }
 
 .button:hover span {
+  transform: translateX(60%);
+}
+
+.readbutton:hover span {
   transform: translateX(60%);
 }

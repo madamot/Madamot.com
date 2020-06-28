@@ -16,10 +16,10 @@ const PostBody = ({ blogPost }) => {
         }}>
 
 
-        <h6><Link to="/">Home</Link> > <Link to={blogPost.type}>{blogPost.type}s</Link></h6>
+        <h5><Link to="/">Home</Link> > <Link to={blogPost.type}>{blogPost.type}s</Link></h5>
         <h1>{blogPost.data.title.text}</h1>
-        <h4>{blogPost.data.description.text}</h4>
-        <h6>{blogPost.data.date}  |  {blogPost.tags}</h6>
+        <h3>{blogPost.data.description.text}</h3>
+        <h4>{blogPost.data.date}  |  {blogPost.data.category.slug}</h4>
       </div>
       <div className="content-container"
         style={{

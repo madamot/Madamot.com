@@ -4,11 +4,11 @@ import React from "react"
 
 import "../styles/button.css"
 
-const SeeMoreButton = ({type, url, children}) =>
-  <Link className="button" to={type+"/"+url}>
+const ReadMoreButton = ({type, url, children}) =>
+  <Link className="readbutton" to={type+"/"+url}>
     {children}<span>&rarr;</span>
   </Link>
 
 
 
-export default SeeMoreButton
+export default ReadMoreButton

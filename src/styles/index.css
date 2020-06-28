@@ -50,10 +50,9 @@ html {
 
 .projectGridHome {
   display: grid;
-  grid-template-columns: 1.5fr 0.5fr 0.5fr;
-  grid-template-rows: ;
+  grid-template-columns: 1fr 0.5fr 0.5fr;
   gap: 1px 1px;
-  grid-template-areas: ". . .";
+  /* grid-template-areas: ". . ."; */
   row-gap: 1rem;
   column-gap: 1rem;
   margin-top: 2rem;

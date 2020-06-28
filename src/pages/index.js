@@ -6,6 +6,7 @@ import Layout from "../components/layout"
 import BothIslands from "../components/BothIslands"
 import SEO from "../components/seo"
 import SeeMoreButton from "../components/SeeMoreButton"
+import ReadMoreButton from "../components/ReadMoreButton"
 
 import "../styles/global.css"
 import "../styles/index.css"
@@ -23,9 +24,9 @@ const IndexPage = ({data: {prismicHomepage}})  => {
       <SEO title="Home" />
       <div style={{ marginBottom: `1.45rem` }}>
         <div style={{ marginTop: `5.5vh`, maxWidth: '500px', position: 'absolute',  }}>
-          <h6>{data.slogan.text}</h6>
-          <h2 style={{ }}>{data.subtitle.text}</h2>
-          <h4>{data.description.text}</h4>
+          <h5>{data.slogan.text}</h5>
+          <h1 style={{ }}>{data.subtitle.text}</h1>
+          <h3>{data.description.text}</h3>
           <SeeMoreButton>
             Let's Get Started!
           </SeeMoreButton>
@@ -39,21 +40,21 @@ const IndexPage = ({data: {prismicHomepage}})  => {
             {data.services.map(service => (
               <div>
                 <div>
-                  <h3>{service.service.text}</h3>
+                  <h2>{service.service.text}</h2>
                   <p>{service.service_description.text}</p>
                 </div>
               </div>
             ))}
           </div>
-          <h6>{data.techsubtitle.text}</h6>
-          <h3>{data.technology.text}</h3>
+          <h5>{data.techsubtitle.text}</h5>
+          <h2>{data.technology.text}</h2>
           <p>{data.technologydescription.text}</p>
           <div className="techGrid">
             {data.tech.map(tech => (
               <div className="techItem">
                 <img alt="language" style={{ height: '50px', margin: '0' }} src={tech.languageimg.fixed.src} />
                 <div className="techDes">
-                  <h5>{tech.techtitle.text}</h5>
+                  <h4>{tech.techtitle.text}</h4>
                   <p>{tech.language.text}</p>
                 </div>
               </div>
@@ -62,31 +63,39 @@ const IndexPage = ({data: {prismicHomepage}})  => {
         </div>
       </section>
       <section className="projects">
-        <h2>{data.recent_projects.text}</h2>
+        <h1>{data.recent_projects.text}</h1>
         <p>{data.recent_projects_subtitle.text}</p>
         <div className="projectGridHome">
           {data.projects.map(project => (
             <div className="projectCard">
-              <h5>{project.project.document.data.title.text}</h5>
-              <SeeMoreButton type={project.project.document.type} url={project.project.document.uid}>
-                See More
-              </SeeMoreButton>
+              <img src={project.project.document.data.image.url} alt="" />
+              <h6><span style={{
+                backgroundColor: 'black'
+              }}>{project.project.document.tags}</span></h6>
+              <h4>{project.project.document.data.title.text}</h4>
+              <p>{project.project.document.data.description.text}</p>
+              <ReadMoreButton type={project.project.document.type} url={project.project.document.uid}>
+                More
+              </ReadMoreButton>
             </div>
           ))}
         </div>
       </section>
       <section className="blog">
-        <h2>{data.recent_blog_posts.text}</h2>
+        <h1>{data.recent_blog_posts.text}</h1>
         <p>{data.recent_blog_posts_subtitle.text}</p>
         <div className="projectGridHome">
           {data.blogs.map(blog => (
             <div className="projectCard">
-              <h5>{blog.blog.document.data.title.text}</h5>
               <img src={blog.blog.document.data.image.url} alt="" />
+              <h6><span style={{
+                backgroundColor: 'black'
+              }}>{blog.blog.document.tags}</span></h6>
+              <h4>{blog.blog.document.data.title.text}</h4>
               <p>{blog.blog.document.data.description.text}</p>
-              <SeeMoreButton type={blog.blog.document.type} url={blog.blog.document.uid}>
-                See More
-              </SeeMoreButton>
+              <ReadMoreButton type={blog.blog.document.type} url={blog.blog.document.uid}>
+                More
+              </ReadMoreButton>
             </div>
           ))}
         </div>
@@ -163,9 +172,16 @@ export const homeQuery = graphql`
                   title {
                     text
                   }
+                  description {
+                    text
+                  }
+                  image {
+                    url
+                  }
                 }
                 uid
                 type
+                tags
               }
             }
           }

@@ -85,6 +85,9 @@ query ProjectPostQuery($uid: String) {
               }
             }
           }
+          category {
+            slug
+          }
         }
       }
     }
