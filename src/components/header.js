@@ -27,17 +27,17 @@ const Header = ({ siteTitle, menuLinks }) => (
           alignItems: "center",
         }}
       >
-        <h1 style={{ margin: 0 }}>
+        {/* <h1 style={{ margin: 0 }}>
           <Link
             to="/"
             style={{
-              // color: `white`,
-              textDecoration: `none`,
+          // color: `white`,
+          textDecoration: `none`,
             }}
           >
             {siteTitle}
           </Link>
-        </h1>
+        </h1> */}
         <div>
           <nav>
             <ul className="navList">
