@@ -1,5 +1,11 @@
 footer {
-  margin-top: 20px;
+  margin-top: 50px;
+  width: 100vw;
+  position: relative;
+  margin-left: -50vw;
+  height: auto;
+  left: 50%;
+  /* background-color: green; */
 }
 
 .socials {
@@ -34,4 +40,10 @@ footer {
 .footerLinks {
   display: grid;
   grid-template-columns: 1fr 1fr;
+}
+
+.footContainer {
+  margin: 0px auto;
+  max-width: 960px;
+  padding: 0px 1.0875rem 1.45rem;
 }

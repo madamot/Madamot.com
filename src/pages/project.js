@@ -5,6 +5,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Filter from '../components/Filter';
+import ReadMoreButton from "../components/ReadMoreButton"
 
 import "../styles/global.css"
 import "../styles/projects.css"
@@ -31,9 +32,17 @@ const Projects = ({data: {allPrismicProject}})  => {
       <Filter handler={filterHandler} filters={filters} />
       <div className="projectGrid">
         {allPrismicProject.edges.map(project => (
-          <Link to={"/"+project.node.type+"/"+project.node.uid} key={project.node.uid} className="project">
-            <h2>{project.node.data.title.text}</h2>
-          </Link>
+          <div className="projectCard">
+            <img src={project.node.data.image.url} alt="" />
+            <h6><span style={{
+              backgroundColor: 'black'
+            }}>{project.node.tags}</span></h6>
+            <h4>{project.node.data.title.text}</h4>
+            <p>{project.node.data.description.text}</p>
+            <ReadMoreButton key={project.node.uid} type={project.node.type} url={"/"+project.node.uid}>
+              More
+            </ReadMoreButton>
+          </div>
         ))}
       </div>
     </Layout>
@@ -46,14 +55,24 @@ export const projectsQuery = graphql`
     allPrismicProject(filter: {tags: {in: $filters}}) {
       edges {
         node {
-          data {
-            title {
-              text
-            }
-          }
+          id
           uid
           type
           tags
+          data {
+            category {
+              slug
+            }
+            title {
+              text
+            }
+            description {
+              text
+            }
+            image {
+              url
+            }
+          }
         }
       }
     }

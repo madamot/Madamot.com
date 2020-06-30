@@ -14,6 +14,7 @@
 
 .readbutton {
   padding: .45rem 2rem .45rem 1.5rem;
+  margin-top: 1rem;
   border-radius: 9999px;
   border: 0.25rem solid #1daee0;
   background-color: #1daee0;
