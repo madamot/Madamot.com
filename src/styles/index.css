@@ -3,6 +3,22 @@ html {
   /* background-color: #deebf6; */
 }
 
+.islands {
+  /* margin-top: 500px; */
+}
+
+.headText {
+  margin-top: 5.5vh;
+  max-width: 500px;
+  position: absolute;
+}
+
+@media (max-width: 700px) {
+  .headText {
+    position: relative;
+  }
+}
+
 .tech {
   background-color: #1daee0;
   width: 100vw;

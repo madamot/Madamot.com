@@ -22,18 +22,22 @@ const IndexPage = ({data: {prismicHomepage}})  => {
   return (
     <Layout>
       <SEO title="Home" />
-      <div style={{ marginBottom: `1.45rem` }}>
-        <div style={{ marginTop: `5.5vh`, maxWidth: '500px', position: 'absolute',  }}>
-          <h5>{data.slogan.text}</h5>
-          <h1 style={{ }}>{data.subtitle.text}</h1>
-          <h3>{data.description.text}</h3>
-          <SeeMoreButton>
-            Let's Get Started!
-          </SeeMoreButton>
-        </div>
+      <div>
+        <div style={{ marginBottom: `1.45rem` }}>
+          <div className="headText">
+            <h5>{data.slogan.text}</h5>
+            <h1 style={{ }}>{data.subtitle.text}</h1>
+            <h3>{data.description.text}</h3>
+            <SeeMoreButton>
+              Let's Get Started!
+            </SeeMoreButton>
+          </div>
 
+        </div>
+        <div className="islands">
+          <BothIslands />
+        </div>
       </div>
-      <BothIslands />
       <section className="tech">
         <div className="techBanner">
           <div className="techGrid">
