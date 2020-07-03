@@ -18,7 +18,7 @@ const About = ({data: {prismicAbout}}) => {
           <div className="aboutBar">
             <div>
               <div className="mug">
-                <img  width="400vw" src={data.image.url} />
+                {/* <img  width="400vw" src={data.image.url} /> */}
               </div>
               <a href={CV} target="_blank">CV</a>
               <h1 style={{textAlign:'center'}}>{data.title.text}</h1>
