@@ -1,0 +1,23 @@
+.bar {
+  background-color: #1daee0;
+  width: 100vw;
+  position: relative;
+  margin-left: -50vw;
+  height: auto;
+  margin-top: 12rem;
+  left: 50%;
+  /* padding-top: 2rem; */
+  color: #f6f6f6;
+}
+
+.aboutBar {
+  margin: 0px auto;
+  max-width: 960px;
+  padding: 0px 1.0875rem 1.45rem;
+}
+
+.mug {
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+}

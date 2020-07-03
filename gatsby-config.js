@@ -25,7 +25,7 @@ module.exports = {
     ],
     description: `My name is Adam Horne. I create digital products to help businesses be more efficient and provide better experiences to their end-users. I’m a dedicated Digital Media Development student building full stack apps and websites, specialising in React, React Native and Django.`,
     author: `Adam Horne`,
-    tags: ["portfolio", "software developer", "developer", "web developer", "app developer"]
+    tags: ["portfolio", "software developer", "developer", "web developer", "app developer", "Adam Horne", "Winchester"]
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -47,7 +47,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/favicon.png`, // This path is relative to the root of the site.
       },
     },
     {
@@ -60,6 +60,7 @@ module.exports = {
           blog: require('./src/schemas/blog.json'),
           project: require('./src/schemas/project.json'),
           tag: require('./src/schemas/tag.json'),
+          about: require('./src/schemas/about.json'),
          // blog_post: require('./src/schemas/blog_post.json'),
        }
         // linkResolver: ({ node, key, value }) => post => `/${post.uid}`,

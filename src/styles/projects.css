@@ -13,3 +13,9 @@
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
+
+@media (max-width: 550px) {
+  .projectGrid {
+      grid-template-columns: repeat(1,minmax(0,1fr));
+  }
+}

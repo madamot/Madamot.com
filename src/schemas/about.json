@@ -1,0 +1,36 @@
+{
+  "Main" : {
+    "image" : {
+      "type" : "Image",
+      "config" : {
+        "constraint" : { },
+        "thumbnails" : [ ],
+        "label" : "Image"
+      }
+    },
+    "title" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "heading1",
+        "label" : "Title",
+        "placeholder" : "About page title"
+      }
+    },
+    "bio" : {
+      "type" : "StructuredText",
+      "config" : {
+        "multi" : "heading4",
+        "label" : "Bio",
+        "placeholder" : "about bio"
+      }
+    },
+    "story" : {
+      "type" : "StructuredText",
+      "config" : {
+        "multi" : "paragraph",
+        "label" : "Story",
+        "placeholder" : "origin story"
+      }
+    }
+  }
+}
