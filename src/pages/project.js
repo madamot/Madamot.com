@@ -27,9 +27,9 @@ const Projects = ({data: {allPrismicProject}})  => {
 
     return (
     <Layout>
-      <SEO title="Page two" />
+      <SEO title="Projects" />
       <h1>Projects</h1>
-      <Filter handler={filterHandler} filters={filters} />
+      {/* <Filter handler={filterHandler} filters={filters} /> */}
       <div className="projectGrid">
         {allPrismicProject.edges.map(project => (
           <div className="projectCard">

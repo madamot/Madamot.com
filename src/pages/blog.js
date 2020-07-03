@@ -11,7 +11,7 @@ import "../styles/projects.css"
 
 const Blog = ({data: {allPrismicBlog}}) => (
   <Layout>
-    <SEO title="Page two" />
+    <SEO title="Blog" />
     <h1>Blog</h1>
     <div className="projectGrid">
       {allPrismicBlog.edges.map(blog => (

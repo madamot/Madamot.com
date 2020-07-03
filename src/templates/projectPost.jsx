@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Loading from '../components/Loading';
+import SEO from "../components/seo"
 
 
 import PostBody from "../components/PostBody"
@@ -18,6 +19,7 @@ export default (props) => {
 
   return(
     <Layout>
+      <SEO title={doc.node.uid} />
       <PostBody blogPost={ doc.node } />
     </Layout>
   )
