@@ -8,6 +8,14 @@
         "label" : "Image"
       }
     },
+    "location" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "heading1, heading2, heading3, heading4, heading5, heading6",
+        "label" : "Location",
+        "placeholder" : "Location"
+      }
+    },
     "title" : {
       "type" : "StructuredText",
       "config" : {
@@ -22,6 +30,51 @@
         "multi" : "heading4",
         "label" : "Bio",
         "placeholder" : "about bio"
+      }
+    },
+    "timeline" : {
+      "type" : "Group",
+      "config" : {
+        "fields" : {
+          "start_date" : {
+            "type" : "Date",
+            "config" : {
+              "label" : "Start Date",
+              "placeholder" : "start date"
+            }
+          },
+          "end_date" : {
+            "type" : "Date",
+            "config" : {
+              "label" : "End Date",
+              "placeholder" : "End date"
+            }
+          },
+          "location1" : {
+            "type" : "StructuredText",
+            "config" : {
+              "single" : "heading1, heading2, heading3, heading4, heading5, heading6",
+              "label" : "location"
+            }
+          },
+          "timeline_title" : {
+            "type" : "StructuredText",
+            "config" : {
+              "single" : "heading1, heading2, heading3, heading4, heading5, heading6",
+              "label" : "Timeline title",
+              "placeholder" : "Time line title"
+            }
+          },
+          "time_line_description" : {
+            "type" : "StructuredText",
+            "config" : {
+              "multi" : "paragraph, strong, list-item, o-list-item",
+              "label" : "Time line description",
+              "placeholder" : "Time line description"
+            }
+          }
+        },
+        "label" : "Timeline"
       }
     },
     "story" : {
