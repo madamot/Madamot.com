@@ -14,19 +14,35 @@ const About = ({data: {prismicAbout}}) => {
     return (
       <Layout>
         <SEO title="About" />
+        <div style={{
+          width: '5rem',
+        }}>
+          <h1 style={{
+            borderBottom: 'solid black 0.5rem'
+          }}>Hi</h1>
+        </div>
         <div className="bar">
           <div className="aboutBar">
-            <div>
+            <div style={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              flexDirection: 'column'
+            }}>
               <div className="mug">
-                {/* <img  width="400vw" src={data.image.url} /> */}
+                <img  width="400vw" src={data.image.url} />
               </div>
-              <a href={CV} target="_blank">CV</a>
               <h1 style={{textAlign:'center'}}>{data.title.text}</h1>
+              <a href={CV} className="CVButton" target="_blank">CV</a>
             </div>
           </div>
         </div>
-        <h4>{data.bio.text}</h4>
-        <div className="container">
+        <div className="bio">
+          <h4>{data.bio.text}</h4>
+        </div>
+        <div className="container" style={{
+          marginBottom: '4rem',
+        }}>
           <p>{data.story.text}</p>
         </div>
       </Layout>
