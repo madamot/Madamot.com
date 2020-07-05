@@ -41,16 +41,20 @@ const About = ({data: {prismicAbout}}) => {
         <div className="bio">
           <h5>{data.bio.text}</h5>
         </div>
-        <div>
+        <div className="timeline">
           {data.timeline.map(timeline => (
-            <div className="container" style={{
-              marginBottom: '2rem',
-            }}>
-              <h6><span style={{
-                backgroundColor: 'black'
-              }}>{timeline.location_name.text}</span></h6>
-              <h4>{timeline.timeline_title.text}</h4>
-              <h5>{timeline.time_line_description.text}</h5>
+            <div className="vertical-timeline">
+              <div className="container container-time" style={{
+                marginBottom: '2rem',
+                // display: 'block',
+              }}>
+                <h3>{timeline.time_period.text}</h3>
+                <h6><span style={{
+                  backgroundColor: 'black'
+                }}>{timeline.location_name.text}</span></h6>
+                <h4>{timeline.timeline_title.text}</h4>
+                <h5>{timeline.time_line_description.text}</h5>
+              </div>
             </div>
           ))}
         </div>
@@ -89,6 +93,9 @@ export const aboutQuery = graphql`
             text
           }
           location_name {
+            text
+          }
+          time_period {
             text
           }
         }

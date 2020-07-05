@@ -28,18 +28,12 @@
       "type": "Group",
       "config": {
         "fields": {
-          "start_date": {
-            "type": "Date",
+          "time_period": {
+            "type": "StructuredText",
             "config": {
-              "label": "Start Date",
-              "placeholder": "start date"
-            }
-          },
-          "end_date": {
-            "type": "Date",
-            "config": {
-              "label": "End Date",
-              "placeholder": "End date"
+              "multi": "heading6",
+              "label": "Time period",
+              "placeholder": "From when to when did this happen"
             }
           },
           "location_name": {

@@ -64,3 +64,56 @@
   padding-top: 4rem;
   padding-bottom: 4rem;
 }
+
+.timeline {
+  width: 95%;
+  max-width: 1170px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.vertical-timeline {
+  width: 40%;
+  margin-left: 0;
+  display: block;
+  clear: both;
+  position: relative;
+
+}
+
+.vertical-timeline:nth-child(2n) {
+  float: right;
+  margin-right: 0;
+  display: block;
+}
+
+@media (max-width: 550px) {
+  .vertical-timeline {
+    width: 80%;
+    margin-left: 60px;
+    display: block;
+  }
+
+  .vertical-timeline:nth-child(2n) {
+      float: none;
+  }
+  .timeline:before {
+      content: "";
+      position: absolute;
+      left: 18px;
+      height: 100%;
+      width: 4px;
+      background: #fff;
+  }
+}
+
+@media only screen and (min-width: 550px) {
+.timeline:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  height: 100%;
+  width: 4px;
+  background: #fff;
+}
+}
