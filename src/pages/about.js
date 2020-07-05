@@ -39,7 +39,7 @@ const About = ({data: {prismicAbout}}) => {
           </div>
         </div>
         <div className="bio">
-          <h4>{data.bio.text}</h4>
+          <h5>{data.bio.text}</h5>
         </div>
         <div>
           {data.timeline.map(timeline => (
