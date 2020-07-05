@@ -16,9 +16,10 @@ const About = ({data: {prismicAbout}}) => {
         <SEO title="About" />
         <div style={{
           width: '5rem',
+          paddingBottom: '50px'
         }}>
           <h1 style={{
-            borderBottom: 'solid black 0.5rem'
+            borderBottom: 'solid black 0.5rem',
           }}>Hi</h1>
         </div>
         <div className="bar">
@@ -30,7 +31,7 @@ const About = ({data: {prismicAbout}}) => {
               flexDirection: 'column'
             }}>
               <div className="mug">
-                <img  height="400vw" src={data.image.url} />
+                <img src={data.image.url} />
               </div>
               <h1 style={{textAlign:'center'}}>{data.title.text}</h1>
               <a href={CV} className="CVButton" target="_blank">CV</a>
@@ -40,12 +41,22 @@ const About = ({data: {prismicAbout}}) => {
         <div className="bio">
           <h4>{data.bio.text}</h4>
         </div>
+        <div>
+          {data.timeline.map(timeline => (
+            <div className="container" style={{
+              marginBottom: '2rem',
+            }}>
+              <h6><span style={{
+                backgroundColor: 'black'
+              }}>{timeline.location_name.text}</span></h6>
+              <h4>{timeline.timeline_title.text}</h4>
+              <h5>{timeline.time_line_description.text}</h5>
+            </div>
+          ))}
+        </div>
         <div className="container" style={{
           marginBottom: '4rem',
         }}>
-          <div>
-
-          </div>
           <p>{data.story.text}</p>
         </div>
       </Layout>
@@ -69,6 +80,17 @@ export const aboutQuery = graphql`
         }
         story {
           text
+        }
+        timeline {
+          timeline_title {
+            text
+          }
+          time_line_description {
+            text
+          }
+          location_name {
+            text
+          }
         }
       }
     }
