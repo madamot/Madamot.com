@@ -53,6 +53,7 @@ const About = ({data: {prismicAbout}}) => {
                   backgroundColor: 'black'
                 }}>{timeline.location_name.text}</span></h6>
                 <h4>{timeline.timeline_title.text}</h4>
+                <br />
                 <h5>{timeline.time_line_description.text}</h5>
               </div>
             </div>
