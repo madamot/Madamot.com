@@ -31,7 +31,7 @@ const About = ({data: {prismicAbout}}) => {
               flexDirection: 'column'
             }}>
               <div className="mug">
-                <img src={data.image.url} />
+                <img className="image" src={data.image.url} />
               </div>
               <h1 style={{textAlign:'center'}}>{data.title.text}</h1>
               <a href={CV} className="CVButton" target="_blank">CV</a>
