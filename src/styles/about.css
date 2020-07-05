@@ -23,6 +23,9 @@
   justify-content: center;
   max-width: 400px;
   object-fit: cover;
+  height: 400px;
+  width: 400px;
+  overflow: hidden;
 }
 
 @media (max-width: 550px) {
