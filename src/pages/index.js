@@ -75,7 +75,7 @@ const IndexPage = ({data: {prismicHomepage}})  => {
               <img src={project.project.document.data.image.url} alt="" />
               <h6><span style={{
                 backgroundColor: 'black'
-              }}>{project.project.document.tags}</span> </h6>
+              }}>{project.project.document.tags}</span> - </h6>
               <h4>{project.project.document.data.title.text}</h4>
               <p>{project.project.document.data.description.text}</p>
               <ReadMoreButton type={project.project.document.type} url={project.project.document.uid}>
@@ -94,7 +94,7 @@ const IndexPage = ({data: {prismicHomepage}})  => {
               <img src={blog.blog.document.data.image.url} alt="" />
               <h6><span style={{
                 backgroundColor: 'black'
-              }}>{blog.blog.document.tags}</span> </h6>
+              }}>{blog.blog.document.tags}</span> - </h6>
               <h4>{blog.blog.document.data.title.text}</h4>
               <p>{blog.blog.document.data.description.text}</p>
               <ReadMoreButton type={blog.blog.document.type} url={blog.blog.document.uid}>
