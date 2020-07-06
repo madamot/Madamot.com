@@ -4,6 +4,7 @@ import Text from "../components/slices/Text"
 import Code from "../components/slices/Code"
 import Image from "../components/slices/Image"
 import Video from "../components/slices/Video"
+import Link from "../components/slices/Link"
 
 const PostSlices = ({ slices }) => {
   return slices.map((slice, index) => {
@@ -38,6 +39,12 @@ const PostSlices = ({ slices }) => {
             {slice.items.map(video => (
               <Video key={index} slice={ video } />
             ))}
+          </div>
+        )
+
+        case 'link': return (
+          <div key={ index } className="slice">
+            <Link key={index} slice={ slice } />
           </div>
         )
 

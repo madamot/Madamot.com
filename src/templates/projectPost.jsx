@@ -86,6 +86,16 @@ query ProjectPostQuery($uid: String) {
                 }
               }
             }
+            ... on PrismicProjectBodyLink {
+              id
+              primary {
+                link_item {
+                  url
+                }
+              }
+              slice_label
+              slice_type
+            }
           }
           category {
             slug

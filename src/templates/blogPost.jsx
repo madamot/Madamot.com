@@ -82,6 +82,16 @@ query BlogPostQuery($uid: String) {
                 }
               }
             }
+            ... on PrismicBlogBodyLink {
+              id
+              primary {
+                link_item {
+                  url
+                }
+              }
+              slice_label
+              slice_type
+            }
           }
           category {
             slug

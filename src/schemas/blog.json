@@ -199,6 +199,22 @@
                 }
               }
             }
+          },
+          "link": {
+            "type": "Slice",
+            "fieldset": "Link",
+            "description": "Link",
+            "icon": "insert_link",
+            "display": "list",
+            "non-repeat": {
+              "link_item": {
+                "type": "Link",
+                "config": {
+                  "label": "Link item"
+                }
+              }
+            },
+            "repeat": {}
           }
         }
       }
