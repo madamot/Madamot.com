@@ -46,9 +46,7 @@ const Header = ({ siteTitle, menuLinks }) => (
                   key={link.name}
                 >
                   <Link to={link.link}>
-                    <p>
-                      {link.name}
-                    </p>
+                    {link.name}
                   </Link>
                 </li>
               ))}
