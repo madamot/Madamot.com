@@ -1,9 +1,11 @@
 import React from "react"
 
+import "../../styles/slices.css"
+
 
 export default ({ slice }) =>
   <div>
     <div>
-      <div dangerouslySetInnerHTML={{ __html: slice.primary.text.html }} />
+      <div className="textDiv" dangerouslySetInnerHTML={{ __html: slice.primary.text.html }} />
     </div>
   </div>

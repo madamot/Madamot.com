@@ -6,6 +6,7 @@ import Image from "../components/slices/Image"
 import Video from "../components/slices/Video"
 import Link from "../components/slices/Link"
 
+
 const PostSlices = ({ slices }) => {
   return slices.map((slice, index) => {
     const res = (() => {
