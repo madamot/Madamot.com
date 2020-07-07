@@ -1,5 +1,4 @@
 import React from "react"
-// import { Link } from "gatsby"
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
@@ -11,7 +10,6 @@ import ReadMoreButton from "../components/ReadMoreButton"
 import "../styles/global.css"
 import "../styles/index.css"
 
-// import HeaderImg from '../images/main_island.svg'
 
 
 

@@ -1,6 +1,8 @@
 import { Link } from "gatsby"
 import React from "react"
 
+import { FaInstagram, FaGithub, FaLinkedinIn, FaTwitter, FaFacebookF } from 'react-icons/fa';
+
 import "../styles/footer.css"
 
 const Footer = ({menuLinks}) => (
@@ -14,22 +16,35 @@ const Footer = ({menuLinks}) => (
         <div></div>
         <div className="socials">
           <ul>
-            <a target="_blank" rel="noreferrer" href="https://www.instagram.com/adam.madamot/"><li className="link insta">instagram</li></a>
-            <a target="_blank" rel="noreferrer" href="https://github.com/madamot"><li className="link git">Github</li></a>
-            <a target="_blank" rel="noreferrer" href="https://www.facebook.com/madamots/"><li className="link fb">Facebook</li></a>
+            <a style={{
+              paddingRight: '1rem',
+            }} target="_blank" rel="noreferrer" href="https://www.instagram.com/adam.madamot/"><FaLinkedinIn /></a>
+            <a style={{
+              paddingRight: '1rem',
+            }} target="_blank" rel="noreferrer" href="https://www.instagram.com/adam.madamot/"><FaInstagram /></a>
+            <a style={{
+              paddingRight: '1rem',
+            }} target="_blank" rel="noreferrer" href="https://github.com/madamot"><FaGithub /></a>
+            <a style={{
+              paddingRight: '1rem',
+            }} target="_blank" rel="noreferrer" href="https://www.facebook.com/madamots/"><FaFacebookF /></a>
           </ul>
         </div>
         <div className="links">
           <nav>
-            <ul className="navList">
+            <ul style={{
+              listStyleType: 'none',
+              display: 'flex',
+              flex: '1',
+            }}>
               {menuLinks.map(link => (
                 <li
                   key={link.name}
-                >
+                  style={{
+                    paddingLeft: '1rem',
+                  }}>
                   <Link to={link.link}>
-                    <p>
-                      {link.name}
-                    </p>
+                    {link.name}
                   </Link>
                 </li>
               ))}
