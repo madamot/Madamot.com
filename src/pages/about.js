@@ -62,7 +62,7 @@ const About = ({data: {prismicAbout}}) => {
         <div className="container" style={{
           marginBottom: '4rem',
         }}>
-          <p>{data.story.text}</p>
+          <h5>{data.story.text}</h5>
         </div>
       </Layout>
     )

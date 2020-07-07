@@ -34,11 +34,18 @@ const Projects = ({data: {allPrismicProject}})  => {
         {allPrismicProject.edges.map(project => (
           <div className="projectCard">
             <img src={project.node.data.image.url} alt="" />
-            <h6><span style={{
-              backgroundColor: 'black'
-            }}>{project.node.tags}</span></h6>
+            <ul style={{
+              display: 'flex',
+              flex: '1',
+            }}>
+              {project.node.tags.map(tag => (
+                <li style={{listStyleType: 'none'}}>
+                  <h6>{tag} | </h6>
+                </li>
+              ))}
+            </ul>
             <h4>{project.node.data.title.text}</h4>
-            <p>{project.node.data.description.text}</p>
+            <h5>{project.node.data.description.text}</h5>
             <ReadMoreButton key={project.node.uid} type={project.node.type} url={"/"+project.node.uid}>
               More
             </ReadMoreButton>

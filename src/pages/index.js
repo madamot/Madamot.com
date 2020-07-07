@@ -45,21 +45,22 @@ const IndexPage = ({data: {prismicHomepage}})  => {
               <div>
                 <div>
                   <h2>{service.service.text}</h2>
-                  <p>{service.service_description.text}</p>
+                  <h5>{service.service_description.text}</h5>
                 </div>
               </div>
             ))}
           </div>
           <h5>{data.techsubtitle.text}</h5>
+          <br />
           <h2>{data.technology.text}</h2>
-          <p>{data.technologydescription.text}</p>
+          <h3>{data.technologydescription.text}</h3>
           <div className="techGrid">
             {data.tech.map(tech => (
               <div className="techItem">
                 <img alt="language" style={{ height: '50px', margin: '0' }} src={tech.languageimg.fixed.src} />
                 <div className="techDes">
                   <h4>{tech.techtitle.text}</h4>
-                  <p>{tech.language.text}</p>
+                  <h5>{tech.language.text}</h5>
                 </div>
               </div>
             ))}
@@ -68,16 +69,23 @@ const IndexPage = ({data: {prismicHomepage}})  => {
       </section>
       <section className="projects">
         <h1>{data.recent_projects.text}</h1>
-        <p>{data.recent_projects_subtitle.text}</p>
+        <h5>{data.recent_projects_subtitle.text}</h5>
         <div className="projectGridHome">
           {data.projects.map(project => (
             <div className="projectCard">
               <img src={project.project.document.data.image.url} alt="" />
-              <h6><span style={{
-                backgroundColor: 'black'
-              }}>{project.project.document.tags}</span> - </h6>
+              <ul style={{
+                display: 'flex',
+                flex: '1',
+              }}>
+                {project.project.document.tags.map(tag => (
+                  <li style={{listStyleType: 'none'}}>
+                    <h6>{tag} | </h6>
+                  </li>
+                ))}
+              </ul>
               <h4>{project.project.document.data.title.text}</h4>
-              <p>{project.project.document.data.description.text}</p>
+              <h5>{project.project.document.data.description.text}</h5>
               <ReadMoreButton type={project.project.document.type} url={project.project.document.uid}>
                 More
               </ReadMoreButton>
@@ -92,11 +100,18 @@ const IndexPage = ({data: {prismicHomepage}})  => {
           {data.blogs.map(blog => (
             <div className="projectCard">
               <img src={blog.blog.document.data.image.url} alt="" />
-              <h6><span style={{
-                backgroundColor: 'black'
-              }}>{blog.blog.document.tags}</span> - </h6>
+              <ul style={{
+                display: 'flex',
+                flex: '1',
+              }}>
+                {blog.blog.document.tags.map(tag => (
+                  <li style={{listStyleType: 'none'}}>
+                    <h6>{tag} | </h6>
+                  </li>
+                ))}
+              </ul>
               <h4>{blog.blog.document.data.title.text}</h4>
-              <p>{blog.blog.document.data.description.text}</p>
+              <h5>{blog.blog.document.data.description.text}</h5>
               <ReadMoreButton type={blog.blog.document.type} url={blog.blog.document.uid}>
                 More
               </ReadMoreButton>
