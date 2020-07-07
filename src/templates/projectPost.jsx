@@ -19,7 +19,12 @@ export default (props) => {
 
   return(
     <Layout>
-      <SEO title={doc.node.uid} />
+      <SEO
+        title={doc.node.data.title.text}
+        description={doc.node.data.title.description}
+        image={doc.node.data.image.fixed.src}
+        pathname={props.location.pathname}
+      />
       <PostBody blogPost={ doc.node } />
     </Layout>
   )
@@ -40,6 +45,9 @@ query ProjectPostQuery($uid: String) {
           }
           image {
             url
+            fixed(width: 1200) {
+              src
+            }
           }
           description {
             text
