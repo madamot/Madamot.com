@@ -18,7 +18,7 @@ const Footer = ({menuLinks}) => (
           <ul>
             <a style={{
               paddingRight: '2rem',
-            }} target="_blank" rel="noreferrer" href="https://www.instagram.com/adam.madamot/"><FaLinkedinIn size={42} /></a>
+            }} target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/adam-h-82b144128/"><FaLinkedinIn size={42} /></a>
             <a style={{
               paddingRight: '2rem',
             }} target="_blank" rel="noreferrer" href="https://www.instagram.com/adam.madamot/"><FaInstagram size={42} /></a>
