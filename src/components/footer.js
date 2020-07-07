@@ -17,16 +17,16 @@ const Footer = ({menuLinks}) => (
         <div className="socials">
           <ul>
             <a style={{
-              paddingRight: '1rem',
+              paddingRight: '2rem',
             }} target="_blank" rel="noreferrer" href="https://www.instagram.com/adam.madamot/"><FaLinkedinIn /></a>
             <a style={{
-              paddingRight: '1rem',
+              paddingRight: '2rem',
             }} target="_blank" rel="noreferrer" href="https://www.instagram.com/adam.madamot/"><FaInstagram /></a>
             <a style={{
-              paddingRight: '1rem',
+              paddingRight: '2rem',
             }} target="_blank" rel="noreferrer" href="https://github.com/madamot"><FaGithub /></a>
             <a style={{
-              paddingRight: '1rem',
+              paddingRight: '2rem',
             }} target="_blank" rel="noreferrer" href="https://www.facebook.com/madamots/"><FaFacebookF /></a>
           </ul>
         </div>
@@ -41,7 +41,7 @@ const Footer = ({menuLinks}) => (
                 <li
                   key={link.name}
                   style={{
-                    paddingLeft: '1rem',
+                    paddingLeft: '2rem',
                   }}>
                   <Link to={link.link}>
                     {link.name}
