@@ -18,16 +18,16 @@ const Footer = ({menuLinks}) => (
           <ul>
             <a style={{
               paddingRight: '2rem',
-            }} target="_blank" rel="noreferrer" href="https://www.instagram.com/adam.madamot/"><FaLinkedinIn /></a>
+            }} target="_blank" rel="noreferrer" href="https://www.instagram.com/adam.madamot/"><FaLinkedinIn size={42} /></a>
             <a style={{
               paddingRight: '2rem',
-            }} target="_blank" rel="noreferrer" href="https://www.instagram.com/adam.madamot/"><FaInstagram /></a>
+            }} target="_blank" rel="noreferrer" href="https://www.instagram.com/adam.madamot/"><FaInstagram size={42} /></a>
             <a style={{
               paddingRight: '2rem',
-            }} target="_blank" rel="noreferrer" href="https://github.com/madamot"><FaGithub /></a>
+            }} target="_blank" rel="noreferrer" href="https://github.com/madamot"><FaGithub size={42} /></a>
             <a style={{
               paddingRight: '2rem',
-            }} target="_blank" rel="noreferrer" href="https://www.facebook.com/madamots/"><FaFacebookF /></a>
+            }} target="_blank" rel="noreferrer" href="https://www.facebook.com/madamots/"><FaFacebookF size={42} /></a>
           </ul>
         </div>
         <div className="links">
