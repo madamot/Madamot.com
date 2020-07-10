@@ -24,7 +24,7 @@ export default (props) => {
       <SEO
         title={doc.node.data.title.text}
         description={doc.node.data.description.text}
-        image={doc.node.data.image.fixed.src}
+        image={doc.node.data.image.fixed}
         pathname={props.location.pathname}
       />
 
