@@ -20,12 +20,12 @@ export default (props) => {
   if (!doc) return <Loading />;
 
   return(
-    <Layout location={props.location}>
+    <Layout location={props.location} title={props.data.site.siteMetadata.title}>
       <SEO
         title={doc.node.data.title.text}
         description={doc.node.data.description.text}
-        image={props.data.file.childImageSharp.fixed}
-        pathname="https://www.madamot.com/"
+        image={doc.node.data.image.fixed.src}
+        pathname={props.location.pathname}
       />
 
       <PostBody blogPost={ doc.node } />
@@ -122,6 +122,11 @@ query ProjectPostQuery($uid: String) {
         src
         width
       }
+    }
+  }
+  site {
+    siteMetadata {
+      title
     }
   }
 }
