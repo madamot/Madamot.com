@@ -6,6 +6,8 @@ import Loading from '../components/Loading';
 import PostBody from "../components/PostBody"
 import SEO from "../components/seo"
 
+import Img from 'gatsby-image'
+
 import "../styles/templates/blogPage.css"
 
 
@@ -25,7 +27,8 @@ export default (props) => {
       <SEO
         title={doc.node.data.title.text}
         description={doc.node.data.description.text}
-        image={doc.node.data.image.fixed}
+        // image={doc.node.data.image.fixed.src}
+        image={props.data.file.childImageSharp.resize}
         pathname={"https://www.madamot.com/"+props.location.pathname}
       />
       <PostBody blogPost={ doc.node } />
@@ -115,16 +118,12 @@ query BlogPostQuery($uid: String) {
       }
     }
   }
-  allFile(filter: {name: {eq: "images/seo.jpg"}}) {
-    edges {
-      node {
-        childImageSharp {
-          resize(width: 1200) {
-            src
-            height
-            width
-          }
-        }
+  file(relativePath: {eq: "seo.jpg"}) {
+    childImageSharp {
+      fixed(width: 1200) {
+        height
+        src
+        width
       }
     }
   }
