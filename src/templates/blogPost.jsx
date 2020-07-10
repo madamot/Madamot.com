@@ -26,7 +26,7 @@ export default (props) => {
         title={doc.node.data.title.text}
         description={doc.node.data.description.text}
         image={doc.node.data.image.fixed}
-        pathname={props.location.pathname}
+        pathname={"https://www.madamot.com/"+props.location.pathname}
       />
       <PostBody blogPost={ doc.node } />
     </Layout>
