@@ -6,7 +6,7 @@ import Loading from '../components/Loading';
 import PostBody from "../components/PostBody"
 import SEO from "../components/seo"
 
-import Img from 'gatsby-image'
+import Img from "gatsby-image"
 
 import "../styles/templates/blogPage.css"
 
@@ -28,9 +28,10 @@ export default (props) => {
         title={doc.node.data.title.text}
         description={doc.node.data.description.text}
         // image={doc.node.data.image.fixed.src}
-        image={props.data.file.childImageSharp.resize}
+        image={props.data.file.childImageSharp.fixed}
         pathname={"https://www.madamot.com/"+props.location.pathname}
       />
+      {/* <Img fixed={props.data.file.childImageSharp.fixed} /> */}
       <PostBody blogPost={ doc.node } />
     </Layout>
   )
