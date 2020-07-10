@@ -45,7 +45,9 @@ const Header = ({ siteTitle, menuLinks }) => (
                 <li
                   key={link.name}
                 >
-                  <Link to={link.link}>
+                  <Link activeStyle={{
+                    textDecoration: "underline"
+                  }} to={link.link}>
                     {link.name}
                   </Link>
                 </li>

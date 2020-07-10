@@ -49,9 +49,7 @@ const About = ({data: {prismicAbout}}) => {
                 // display: 'block',
               }}>
                 <h3>{timeline.time_period.text}</h3>
-                <h6><span style={{
-                  backgroundColor: 'black'
-                }}>{timeline.location_name.text}</span></h6>
+                <h6>{timeline.location_name.text}</h6>
                 <h4>{timeline.timeline_title.text}</h4>
                 <br />
                 <h5>{timeline.time_line_description.text}</h5>
