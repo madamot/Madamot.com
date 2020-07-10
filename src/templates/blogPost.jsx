@@ -6,6 +6,8 @@ import Loading from '../components/Loading';
 import PostBody from "../components/PostBody"
 import SEO from "../components/seo"
 
+import Img from "gatsby-image"
+
 import "../styles/templates/blogPage.css"
 
 
@@ -15,14 +17,20 @@ export default (props) => {
 
   if (!doc) return <Loading />;
 
+  // render() {
+  //   const post = this.props.data.markdownRemark
+  //   const siteTitle = this.props.data.site.siteMetadata.title
+  //   const image = props.data.allFile.edges.node.childImageSharp.resize
+
   return(
     <Layout>
       <SEO
         title={doc.node.data.title.text}
         description={doc.node.data.title.description}
-        image={doc.node.data.image.fixed.src}
+        image={doc.node.data.image.fixed}
         pathname={props.location.pathname}
       />
+      {/* <Img src={props.data.allFile.edges.node.childImageSharp.resize} /> */}
       <PostBody blogPost={ doc.node } />
     </Layout>
   )
@@ -45,6 +53,8 @@ query BlogPostQuery($uid: String) {
             url
             fixed(width: 1200) {
               src
+              height
+              width
             }
           }
           description {
@@ -103,6 +113,19 @@ query BlogPostQuery($uid: String) {
           }
           category {
             slug
+          }
+        }
+      }
+    }
+  }
+  allFile(filter: {name: {eq: "seo"}}) {
+    edges {
+      node {
+        childImageSharp {
+          resize(width: 1200) {
+            src
+            height
+            width
           }
         }
       }
