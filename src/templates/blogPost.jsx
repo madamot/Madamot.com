@@ -23,13 +23,13 @@ export default (props) => {
   //   const image = props.data.allFile.edges.node.childImageSharp.resize
 
   return(
-    <Layout location={props.location}>
+    <Layout location={props.location} title={props.data.site.siteMetadata.title}>
       <SEO
         title={doc.node.data.title.text}
         description={doc.node.data.description.text}
         // image={doc.node.data.image.fixed.src}
         image={props.data.file.childImageSharp.fixed}
-        pathname="https://www.madamot.com/"
+        pathname={props.location.pathname}
       />
       {/* <Img fixed={props.data.file.childImageSharp.fixed} /> */}
       <PostBody blogPost={ doc.node } />
@@ -126,6 +126,11 @@ query BlogPostQuery($uid: String) {
         src
         width
       }
+    }
+  }
+  site {
+    siteMetadata {
+      title
     }
   }
 }
