@@ -27,12 +27,11 @@ export default (props) => {
       <SEO
         title={doc.node.data.title.text}
         description={doc.node.data.description.text}
-        image={doc.node.data.image.fixed}
-        // image={props.data.file.childImageSharp.fixed}
+        // image={doc.node.data.image.fixed.src}
+        image={props.data.file.childImageSharp.fixed}
         pathname={props.location.pathname}
       />
       {/* <Img fixed={props.data.file.childImageSharp.fixed} /> */}
-      {/* <Img fixed={doc.node.data.image.fixed} /> */}
       <PostBody blogPost={ doc.node } />
     </Layout>
   )
