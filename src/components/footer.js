@@ -7,7 +7,7 @@ import "../styles/footer.css"
 
 const Footer = ({menuLinks}) => (
   <footer>
-    <div class="footContainer">
+    <div className="footContainer">
       <div className="footerLinks">
         <div className="footerDes">
           <p className="footerDesText"><strong>Madamot</strong> is a Digital Agency founded by Adam Horne from London England, currently living in Winchester. We create digital products to help businesses be more efficient and provide better experiences to their end-users. We build full stack apps and websites, specialising in React, React Native and Django.</p>
