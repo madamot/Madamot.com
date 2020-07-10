@@ -6,10 +6,6 @@ import Loading from '../components/Loading';
 import PostBody from "../components/PostBody"
 import SEO from "../components/seo"
 
-import Img from "gatsby-image"
-
-import seopic from "../images/seo.jpg"
-
 import "../styles/templates/blogPage.css"
 
 
@@ -28,8 +24,8 @@ export default (props) => {
     <Layout location={props.location}>
       <SEO
         title={doc.node.data.title.text}
-        description={doc.node.data.title.description}
-        image={seopic}
+        description={doc.node.data.description.text}
+        image={doc.node.data.image.fixed}
         pathname={props.location.pathname}
       />
       <PostBody blogPost={ doc.node } />

@@ -21,8 +21,8 @@ export default (props) => {
     <Layout>
       <SEO
         title={doc.node.data.title.text}
-        description={doc.node.data.title.description}
-        image={doc.node.data.image.fixed.src}
+        description={doc.node.data.description.text}
+        image={doc.node.data.image.fixed}
         pathname={props.location.pathname}
       />
       <PostBody blogPost={ doc.node } />
