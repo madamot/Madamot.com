@@ -6,7 +6,6 @@ import Loading from '../components/Loading';
 import PostBody from "../components/PostBody"
 import SEO from "../components/seo"
 
-import Img from "gatsby-image"
 
 import "../styles/templates/blogPage.css"
 

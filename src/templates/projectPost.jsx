@@ -5,8 +5,6 @@ import Layout from "../components/layout"
 import Loading from '../components/Loading';
 import SEO from "../components/seo"
 
-import Img from 'gatsby-image'
-
 
 import PostBody from "../components/PostBody"
 

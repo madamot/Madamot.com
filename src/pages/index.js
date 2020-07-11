@@ -2,10 +2,12 @@ import React from "react"
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import BothIslands from "../components/BothIslands"
 import SEO from "../components/seo"
+
+import BothIslands from "../components/BothIslands"
 import SeeMoreButton from "../components/SeeMoreButton"
 import ReadMoreButton from "../components/ReadMoreButton"
+import Post from "../components/Post"
 
 import "../styles/global.css"
 import "../styles/index.css"
@@ -69,52 +71,14 @@ const IndexPage = ({data: {prismicHomepage}})  => {
         <h1>{data.recent_projects.text}</h1>
         <h5>{data.recent_projects_subtitle.text}</h5>
         <div className="projectGridHome">
-          {data.projects.map(project => (
-            <div className="projectCard">
-              <img src={project.project.document.data.image.url} alt="" />
-              <ul style={{
-                display: 'flex',
-                flex: '1',
-              }}>
-                {project.project.document.tags.map(tag => (
-                  <li style={{listStyleType: 'none'}}>
-                    <h6>{tag} | </h6>
-                  </li>
-                ))}
-              </ul>
-              <h4>{project.project.document.data.title.text}</h4>
-              <h5>{project.project.document.data.description.text}</h5>
-              <ReadMoreButton type={project.project.document.type} url={project.project.document.uid}>
-                More
-              </ReadMoreButton>
-            </div>
-          ))}
+          {data.projects.map(post => <Post key={post.project.document.id} post={post.project} />)}
         </div>
       </section>
       <section className="blog">
         <h1>{data.recent_blog_posts.text}</h1>
         <p>{data.recent_blog_posts_subtitle.text}</p>
         <div className="projectGridHome">
-          {data.blogs.map(blog => (
-            <div className="projectCard">
-              <img src={blog.blog.document.data.image.url} alt="" />
-              <ul style={{
-                display: 'flex',
-                flex: '1',
-              }}>
-                {blog.blog.document.tags.map(tag => (
-                  <li style={{listStyleType: 'none'}}>
-                    <h6>{tag} | </h6>
-                  </li>
-                ))}
-              </ul>
-              <h4>{blog.blog.document.data.title.text}</h4>
-              <h5>{blog.blog.document.data.description.text}</h5>
-              <ReadMoreButton type={blog.blog.document.type} url={blog.blog.document.uid}>
-                More
-              </ReadMoreButton>
-            </div>
-          ))}
+          {data.blogs.map(post => <Post key={post.blog.document.id} post={post.blog} />)}
         </div>
       </section>
     </Layout>
