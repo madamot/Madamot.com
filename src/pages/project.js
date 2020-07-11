@@ -6,6 +6,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Filter from '../components/Filter';
 import ReadMoreButton from "../components/ReadMoreButton"
+import Post from "../components/Post"
 
 import "../styles/global.css"
 import "../styles/projects.css"
@@ -31,26 +32,7 @@ const Projects = ({data: {allPrismicProject}})  => {
       <h1>Projects</h1>
       {/* <Filter handler={filterHandler} filters={filters} /> */}
       <div className="projectGrid">
-        {allPrismicProject.edges.map(project => (
-          <div className="projectCard">
-            <img src={project.node.data.image.url} alt="" />
-            <ul style={{
-              display: 'flex',
-              flex: '1',
-            }}>
-              {project.node.tags.map(tag => (
-                <li style={{listStyleType: 'none'}}>
-                  <h6>{tag} | </h6>
-                </li>
-              ))}
-            </ul>
-            <h4>{project.node.data.title.text}</h4>
-            <h5>{project.node.data.description.text}</h5>
-            <ReadMoreButton key={project.node.uid} type={project.node.type} url={"/"+project.node.uid}>
-              More
-            </ReadMoreButton>
-          </div>
-        ))}
+        {allPrismicProject.edges.map(post => <Post key={post.node.id} post={post.node} />)}
       </div>
     </Layout>
   )

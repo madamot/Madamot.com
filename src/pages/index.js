@@ -71,14 +71,14 @@ const IndexPage = ({data: {prismicHomepage}})  => {
         <h1>{data.recent_projects.text}</h1>
         <h5>{data.recent_projects_subtitle.text}</h5>
         <div className="projectGridHome">
-          {data.projects.map(post => <Post key={post.project.document.id} post={post.project} />)}
+          {data.projects.map(post => <Post key={post.project.document.id} post={post.project.document} />)}
         </div>
       </section>
       <section className="blog">
         <h1>{data.recent_blog_posts.text}</h1>
         <p>{data.recent_blog_posts_subtitle.text}</p>
         <div className="projectGridHome">
-          {data.blogs.map(post => <Post key={post.blog.document.id} post={post.blog} />)}
+          {data.blogs.map(post => <Post key={post.blog.document.id} post={post.blog.document} />)}
         </div>
       </section>
     </Layout>
