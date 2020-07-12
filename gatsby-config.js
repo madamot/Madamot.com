@@ -7,19 +7,19 @@ module.exports = {
     title: `Adam Horne`,
     menuLinks:[
       {
-         name:'home',
+         name:'Home',
          link:'/'
       },
       {
-         name:'about',
+         name:'About',
          link:'/about'
       },
       {
-         name:'project',
+         name:'Project',
          link:'/project'
       },
       {
-         name:'blog',
+         name:'Blog',
          link:'/blog'
       },
     ],

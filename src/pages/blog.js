@@ -18,7 +18,7 @@ const Blog = ({data: {allPrismicBlog}}) => (
       {allPrismicBlog.edges.map(post => <Post key={post.node.id} post={post.node} />)}
     </div>
   </Layout>
-)
+);
 
 export default Blog
 
