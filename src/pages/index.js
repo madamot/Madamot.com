@@ -182,6 +182,7 @@ export const homeQuery = graphql`
                   image {
                     url
                   }
+                  date
                 }
                 uid
                 type

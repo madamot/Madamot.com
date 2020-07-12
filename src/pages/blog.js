@@ -44,6 +44,7 @@ export const projectsQuery = graphql`
             image {
               url
             }
+            date
           }
         }
       }

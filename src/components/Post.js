@@ -19,8 +19,13 @@ const Post = ({post}) =>
         </li>
       ))}
     </ul>
+    { //Check if has date
+      (post.data.date)
+        ? <h5>{post.data.date}</h5>
+        : null
+    }
     <h4>{post.data.title.text}</h4>
-    <h5>{post.data.description.text}</h5>
+    <h5 className="postDes">{post.data.description.text}</h5>
     <ReadMoreButton type={post.type} url={post.uid}>
       More
     </ReadMoreButton>
