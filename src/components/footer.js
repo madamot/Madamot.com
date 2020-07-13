@@ -15,28 +15,32 @@ const Footer = ({menuLinks}) => (
         </div>
         <div></div>
         <div className="socials">
-          <ul>
-            <a style={{
-              paddingRight: '2rem',
-            }} target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/adam-h-82b144128/"><FaLinkedinIn size={42} /></a>
-            <a style={{
-              paddingRight: '2rem',
-            }} target="_blank" rel="noreferrer" href="https://www.instagram.com/adam.madamot/"><FaInstagram size={42} /></a>
-            <a style={{
-              paddingRight: '2rem',
-            }} target="_blank" rel="noreferrer" href="https://github.com/madamot"><FaGithub size={42} /></a>
-            <a style={{
-              paddingRight: '2rem',
-            }} target="_blank" rel="noreferrer" href="https://www.facebook.com/madamots/"><FaFacebookF size={42} /></a>
+          <ul className="linksCon">
+            <li>
+              <a style={{
+                paddingRight: '2rem',
+              }} target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/adam-h-82b144128/"><FaLinkedinIn size={42} /></a>
+            </li>
+            <li>
+              <a style={{
+                paddingRight: '2rem',
+              }} target="_blank" rel="noreferrer" href="https://www.instagram.com/adam.madamot/"><FaInstagram size={42} /></a>
+            </li>
+            <li>
+              <a style={{
+                paddingRight: '2rem',
+              }} target="_blank" rel="noreferrer" href="https://github.com/madamot"><FaGithub size={42} /></a>
+            </li>
+            <li>
+              <a style={{
+                paddingRight: '2rem',
+              }} target="_blank" rel="noreferrer" href="https://www.facebook.com/madamots/"><FaFacebookF size={42} /></a>
+            </li>
           </ul>
         </div>
         <div className="links">
           <nav>
-            <ul style={{
-              listStyleType: 'none',
-              display: 'flex',
-              flex: '1',
-            }}>
+            <ul className="linksCon">
               {menuLinks.map(link => (
                 <li
                   key={link.name}
