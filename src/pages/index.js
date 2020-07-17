@@ -17,7 +17,7 @@ import "../styles/index.css"
 
 
 
-const IndexPage = ({data: {prismicHomepage}})  => {
+const IndexPage = (props, {data: {prismicHomepage}})  => {
   const { data } = prismicHomepage
 
 
