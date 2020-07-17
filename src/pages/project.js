@@ -8,12 +8,10 @@ import Filter from '../components/Filter';
 import ReadMoreButton from "../components/ReadMoreButton"
 import Post from "../components/Post"
 
-import homePage from "../images/homePage.png";
-
 import "../styles/global.css"
 import "../styles/projects.css"
 
-const Projects = (props, {data: {allPrismicProject}})  => {
+const Projects = ({data: {allPrismicProject}})  => {
 
   const [filters, addFilters] = useState([1,])
 
@@ -30,12 +28,7 @@ const Projects = (props, {data: {allPrismicProject}})  => {
 
     return (
     <Layout>
-      <SEO
-        title="Projects"
-        description="View my Portfolio"
-        image={homePage}
-        pathname={props.location.pathname}
-      />
+      <SEO title="Projects" />
       <h1>Projects</h1>
       {/* <Filter handler={filterHandler} filters={filters} /> */}
       <div className="projectGrid">

@@ -6,21 +6,14 @@ import SEO from "../components/seo"
 import ReadMoreButton from "../components/ReadMoreButton"
 import CV from "../assets/Adam_Horne_CV.pdf"
 
-import homePage from "../images/homePage.png";
-
 import "../styles/global.css"
 import "../styles/about.css"
 
-const About = (props, {data: {prismicAbout}}) => {
+const About = ({data: {prismicAbout}}) => {
   const { data } = prismicAbout
     return (
       <Layout>
-        <SEO
-          title={data.title.text}
-          description={data.bio.text}
-          image={homePage}
-          pathname={props.location.pathname}
-        />
+        <SEO title="About" />
         <div style={{
           width: '5rem',
           paddingBottom: '50px'
