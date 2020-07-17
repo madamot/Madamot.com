@@ -10,6 +10,8 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
+import homePage from "../images/homePage.png";
+
 function SEO({ description, lang, meta, image: metaImage, title, pathname }) {
   const { site } = useStaticQuery(
     graphql`
@@ -30,7 +32,7 @@ function SEO({ description, lang, meta, image: metaImage, title, pathname }) {
   const image =
     metaImage && metaImage.src
       ? `${metaImage.src}`
-      : null
+      : homePage
     const canonical = pathname ? `${site.siteMetadata.siteUrl}${pathname}` : null
 
   return (
