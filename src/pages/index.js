@@ -9,6 +9,8 @@ import SeeMoreButton from "../components/SeeMoreButton"
 import ReadMoreButton from "../components/ReadMoreButton"
 import Post from "../components/Post"
 
+import homePage from "../images/homePage.png";
+
 import "../styles/global.css"
 import "../styles/index.css"
 
@@ -21,7 +23,12 @@ const IndexPage = ({data: {prismicHomepage}})  => {
 
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO
+        title={data.subtitle.text}
+        description={data.description.text}
+        image={homePage}
+        pathname={props.location.pathname}
+      />
 
       <div style={{ marginBottom: `1.45rem` }}>
         <div className="headText">
