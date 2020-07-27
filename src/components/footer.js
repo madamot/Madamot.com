@@ -34,6 +34,11 @@ const Footer = ({menuLinks}) => (
             <li>
               <a style={{
                 paddingRight: '2rem',
+              }} target="_blank" rel="noreferrer" href="https://twitter.com/Madamotadam"><FaTwitter size={42} /></a>
+            </li>
+            <li>
+              <a style={{
+                paddingRight: '2rem',
               }} target="_blank" rel="noreferrer" href="https://www.facebook.com/madamots/"><FaFacebookF size={42} /></a>
             </li>
           </ul>
