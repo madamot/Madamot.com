@@ -7,6 +7,7 @@ import ReadMoreButton from "../components/ReadMoreButton"
 import "../styles/button.css"
 
 const Post = ({post}) =>
+<div>
   <div className="projectCard">
     <img src={post.data.image.url} alt="" />
     <ul style={{
@@ -15,7 +16,7 @@ const Post = ({post}) =>
     }}>
       {post.tags.map(tag => (
         <li style={{listStyleType: 'none'}}>
-          <h6>{tag} | </h6>
+          <h6>{tag}</h6>
         </li>
       ))}
     </ul>
@@ -30,6 +31,7 @@ const Post = ({post}) =>
       More
     </ReadMoreButton>
   </div>
+</div>
 
 
 
