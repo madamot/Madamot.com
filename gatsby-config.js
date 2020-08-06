@@ -22,6 +22,10 @@ module.exports = {
          name:'Blog',
          link:'/blog'
       },
+      {
+         name:'Shop',
+         link:'/shop'
+      },
     ],
     description: `My name is Adam Horne. I create digital products to help businesses be more efficient and provide better experiences to their end-users. I’m a dedicated Digital Media Development student building full stack apps and websites, specialising in React, React Native and Django.`,
     author: `Adam Horne`,
