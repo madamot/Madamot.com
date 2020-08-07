@@ -27,16 +27,16 @@ export default (props) => {
         image={doc.node.data.image.fixed}
         pathname={props.location.pathname}
       />
-
+      
       <ShopBody shopPost={ doc.node } itemURL={itemURL}/>
     </Layout>
   )
 }
 
 export const pageQuery = graphql`
-  query ShopPost {
+  query ShopPost($uid: String) {
     __typename
-    allPrismicShop {
+    allPrismicShop(filter: {uid: {eq: $uid}}) {
       edges {
         node {
           uid
