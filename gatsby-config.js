@@ -15,7 +15,7 @@ module.exports = {
          link:'/about'
       },
       {
-         name:'Project',
+         name:'Projects',
          link:'/project'
       },
       {
@@ -66,6 +66,7 @@ module.exports = {
           project: require('./src/schemas/project.json'),
           tag: require('./src/schemas/tag.json'),
           about: require('./src/schemas/about.json'),
+          shop: require('./src/schemas/shop.json'),
          // blog_post: require('./src/schemas/blog_post.json'),
        }
         // linkResolver: ({ node, key, value }) => post => `/${post.uid}`,
