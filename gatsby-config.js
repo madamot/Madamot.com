@@ -15,12 +15,16 @@ module.exports = {
          link:'/about'
       },
       {
-         name:'Project',
+         name:'Projects',
          link:'/project'
       },
       {
          name:'Blog',
          link:'/blog'
+      },
+      {
+         name:'Shop',
+         link:'/shop'
       },
     ],
     description: `My name is Adam Horne. I create digital products to help businesses be more efficient and provide better experiences to their end-users. I’m a dedicated Digital Media Development student building full stack apps and websites, specialising in React, React Native and Django.`,
@@ -62,6 +66,7 @@ module.exports = {
           project: require('./src/schemas/project.json'),
           tag: require('./src/schemas/tag.json'),
           about: require('./src/schemas/about.json'),
+          shop: require('./src/schemas/shop.json'),
          // blog_post: require('./src/schemas/blog_post.json'),
        }
         // linkResolver: ({ node, key, value }) => post => `/${post.uid}`,
@@ -88,6 +93,12 @@ module.exports = {
         ],
       },
     },
+    {
+			resolve: 'gatsby-plugin-snipcart',
+			options: {
+				apiKey: 'NDZhOGQ5NDQtNWRmNS00MjNmLThlNGItMGE5OTIxNGE1Mzg0NjM3MzI0MTU1MDEzNjQ2ODA0'
+			}
+		},
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
