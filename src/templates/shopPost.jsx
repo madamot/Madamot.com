@@ -6,126 +6,65 @@ import Loading from '../components/Loading';
 import SEO from "../components/seo"
 
 
-import PostBody from "../components/PostBody"
+import ShopBody from "../components/ShopBody"
 
 import "../styles/templates/blogPage.css"
 
 
 export default (props) => {
-  // console.log(props);
-  // const doc = props.data.allPrismicProject.edges.slice(0,1).pop();
+  console.log(props);
+  const doc = props.data.allPrismicShop.edges.slice(0,1).pop();
 
-  // if (!doc) return <Loading />;
+  if (!doc) return <Loading />;
+
+  const itemURL = `${props.data.site.siteMetadata.siteUrl}${props.location.pathname}`
 
   return(
     <Layout>
-      {/* <SEO
+      <SEO
         title={doc.node.data.title.text}
         description={doc.node.data.description.text}
         image={doc.node.data.image.fixed}
         pathname={props.location.pathname}
-      /> */}
-      <p>shop post template</p>
-      {/* <PostBody blogPost={ doc.node } /> */}
+      />
+
+      <ShopBody shopPost={ doc.node } itemURL={itemURL}/>
     </Layout>
   )
 }
 
-// export const pageQuery = graphql`
-// query ProjectPostQuery($uid: String) {
-//   allPrismicProject(filter: {uid: {eq: $uid}}) {
-//     edges {
-//       node {
-//         uid
-//         type
-//         id
-//         tags
-//         data {
-//           title {
-//             text
-//           }
-//           image {
-//             url
-//             fixed(width: 1200) {
-//               src
-//             }
-//           }
-//           description {
-//             text
-//           }
-//           date
-//           body {
-//             ... on PrismicProjectBodyText {
-//               id
-//               slice_type
-//               slice_label
-//               primary {
-//                 text {
-//                   html
-//                 }
-//               }
-//             }
-//             ... on PrismicProjectBodyCodeSnippet {
-//               id
-//               slice_type
-//               slice_label
-//               items {
-//                 code_snippet {
-//                   text
-//                 }
-//               }
-//             }
-//             ... on PrismicProjectBodyImage {
-//               id
-//               slice_type
-//               slice_label
-//               items {
-//                 image {
-//                   url
-//                 }
-//               }
-//             }
-//             ... on PrismicProjectBodyEmbededVideo {
-//               id
-//               slice_type
-//               slice_label
-//               items {
-//                 video {
-//                   html
-//                 }
-//               }
-//             }
-//             ... on PrismicProjectBodyLink {
-//               id
-//               primary {
-//                 link_item {
-//                   url
-//                 }
-//               }
-//               slice_label
-//               slice_type
-//             }
-//           }
-//           category {
-//             slug
-//           }
-//         }
-//       }
-//     }
-//   }
-//   file(relativePath: {eq: "seo.jpg"}) {
-//     childImageSharp {
-//       fixed(width: 1200) {
-//         height
-//         src
-//         width
-//       }
-//     }
-//   }
-//   site {
-//     siteMetadata {
-//       title
-//     }
-//   }
-// }
-// `
+export const pageQuery = graphql`
+  query ShopPost {
+    __typename
+    allPrismicShop {
+      edges {
+        node {
+          uid
+          type
+          id
+          data {
+            title {
+              text
+            }
+            image {
+              url
+              fixed(width: 1200) {
+                src
+              }
+            }
+            description {
+              text
+            }
+            product_release_date(formatString: "")
+            price
+          }
+        }
+      }
+    }
+    site {
+      siteMetadata {
+        siteUrl
+      }
+    }
+  }
+`

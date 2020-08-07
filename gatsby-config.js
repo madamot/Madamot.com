@@ -94,6 +94,12 @@ module.exports = {
       },
     },
     {
+			resolve: 'gatsby-plugin-snipcart',
+			options: {
+				apiKey: 'NDZhOGQ5NDQtNWRmNS00MjNmLThlNGItMGE5OTIxNGE1Mzg0NjM3MzI0MTU1MDEzNjQ2ODA0'
+			}
+		},
+    {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         // replace "UA-XXXXXXXXX-X" with your own Tracking ID

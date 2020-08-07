@@ -40,7 +40,7 @@ exports.createPages = async ({ graphql, actions }) => {
           node {
             uid
             data {
-              product_title {
+              title {
                 text
               }
             }

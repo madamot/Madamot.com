@@ -8,8 +8,8 @@ import "../styles/button.css"
 
 const ShopItem = ({post}) =>
   <div className="projectCard">
-    <img src={post.data.product_image.url} alt="" />
-    <h4>{post.data.product_title.text}</h4>
+    <img src={post.data.image.url} alt="" />
+    <h4>{post.data.title.text}</h4>
     <h5>{post.data.description.text}</h5>
     <h6>£{post.data.price}</h6>
 

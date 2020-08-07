@@ -32,11 +32,11 @@ export const shopQuery = graphql`
           uid
           type
           data {
-            product_title {
+            title {
               text
             }
             product_release_date(formatString: "")
-            product_image {
+            image {
               url
             }
             price
