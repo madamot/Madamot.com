@@ -27,7 +27,7 @@ export default (props) => {
         image={doc.node.data.image.fixed}
         pathname={props.location.pathname}
       />
-      
+      <button className="snipcart-checkout">Click here to checkout</button>
       <ShopBody shopPost={ doc.node } itemURL={itemURL}/>
     </Layout>
   )

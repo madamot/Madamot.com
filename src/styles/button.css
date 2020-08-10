@@ -39,16 +39,16 @@
   color: #fff;
 }
 
-span {
+#special {
   margin-left: 10px;
   transition: 0.3s;
   position: absolute;
 }
 
-.button:hover span {
+.button:hover #special {
   transform: translateX(60%);
 }
 
-.readbutton:hover span {
+.readbutton:hover #special {
   transform: translateX(60%);
 }

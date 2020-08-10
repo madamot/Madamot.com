@@ -32,10 +32,12 @@ const ShopBody = ({ shopPost, itemURL }) => {
             <img className="image" alt="" src={shopPost.data.image.url} />
           </div>
           <button
-            class="snipcart-add-item"
+            className="snipcart-add-item"
             data-item-id={shopPost.uid}
             data-item-price={shopPost.data.price}
             data-item-url={itemURL}
+            data-item-description={shopPost.data.description.text}
+            data-item-image={shopPost.data.image.url}
             data-item-name={shopPost.data.title.text}
             >
             Add to cart

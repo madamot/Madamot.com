@@ -6,7 +6,7 @@ import "../styles/button.css"
 
 const SeeMoreButton = ({type, url, children}) =>
   <Link className="button" to={"/"+url}>
-    {children}<span>&rarr;</span>
+    {children}<span id="special">&rarr;</span>
   </Link>
 
 

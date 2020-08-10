@@ -14,6 +14,7 @@ const Shop = ({data: {allPrismicShop}}) => (
     <SEO title="Shop" />
     <h1>Shop</h1>
     <p>You just hit the shop... the beauty.</p>
+    <button className="snipcart-checkout">Click here to checkout</button>
     <div className="projectGrid">
       {allPrismicShop.edges.map(item => <ShopItem key={item.node.id} post={item.node} />)}
     </div>
