@@ -13,7 +13,7 @@ const Shop = ({data: {allPrismicShop}}) => (
   <Layout>
     <SEO title="Shop" />
     <h1>Shop</h1>
-    <p>You just hit the shop... the beauty.</p>
+    <p>Before I fell in love with web development graphic design was my passion, it's something I still enjoy and in my spare time I like to make cool art which you can find in this shop. All prepared with care with giclée printing on beautiful 10.3mm thick, enhanced matte paper.</p>
     <button className="snipcart-checkout">Click here to checkout</button>
     <div className="projectGrid">
       {allPrismicShop.edges.map(item => <ShopItem key={item.node.id} post={item.node} />)}
