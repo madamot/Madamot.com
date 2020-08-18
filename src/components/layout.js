@@ -40,7 +40,11 @@ const Layout = ({ children }) => {
         }}
       >
         <main>{children}</main>
-        <Footer menuLinks={data.site.siteMetadata.menuLinks} />
+        <Footer className="cusFooter" menuLinks={data.site.siteMetadata.menuLinks}
+          style={{
+            backgroundColor: 'red',
+          }}
+        />
       </div>
     </>
   )
