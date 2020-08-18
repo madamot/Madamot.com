@@ -52,6 +52,9 @@ const Header = ({ siteTitle, menuLinks }) => (
                   </Link>
                 </li>
               ))}
+              <li>
+                | <button className="snipcart-checkout">&#128722;</button>
+              </li>
             </ul>
           </nav>
         </div>

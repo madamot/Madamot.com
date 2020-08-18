@@ -9,6 +9,7 @@ import SEO from "../components/seo"
 import ShopBody from "../components/ShopBody"
 
 import "../styles/templates/blogPage.css"
+import "../styles/templates/shopItem.css"
 
 
 export default (props) => {
@@ -27,7 +28,6 @@ export default (props) => {
         image={doc.node.data.image.fixed}
         pathname={props.location.pathname}
       />
-      <button className="snipcart-checkout">Click here to checkout</button>
       <ShopBody shopPost={ doc.node } itemURL={itemURL}/>
     </Layout>
   )
@@ -57,6 +57,21 @@ export const pageQuery = graphql`
             }
             product_release_date(formatString: "")
             price
+            related_products {
+              id
+            }
+            body {
+              ... on PrismicShopBodyImage {
+                id
+                slice_type
+                slice_label
+                items {
+                  image {
+                    url
+                  }
+                }
+              }
+            }
           }
         }
       }

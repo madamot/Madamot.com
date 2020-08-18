@@ -10,7 +10,7 @@ export default ({ slice }) =>
       Display: 'flex',
     }}>
       {slice.items.map(image => (
-        <img src={image.image.url} alt="" style={{
+        <img key='1' src={image.image.url} alt="" style={{
           textAlign: 'center',
         }} />
       ))}
