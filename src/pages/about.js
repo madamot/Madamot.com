@@ -50,18 +50,19 @@ const About = ({data: {prismicAbout}}) => {
               }}>
                 <h3>{timeline.time_period.text}</h3>
                 <h6>{timeline.location_name.text}</h6>
-                <h4>{timeline.timeline_title.text}</h4>
+                <br/>
                 <br />
+                <h4>{timeline.timeline_title.text}</h4>
                 <h5>{timeline.time_line_description.text}</h5>
               </div>
             </div>
           ))}
         </div>
-        <div className="container" style={{
-          marginBottom: '4rem',
-        }}>
+        {/* <div className="container" style={{
+            marginBottom: '4rem',
+          }}>
           <h5>{data.story.text}</h5>
-        </div>
+        </div> */}
       </Layout>
     )
 }
