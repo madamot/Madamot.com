@@ -61,27 +61,27 @@ export const pageQuery = graphql`
               id
             }
             body {
-              ... on PrismicProjectBodyText {
-                id
-                slice_type
-                slice_label
-                primary {
-                  text {
-                    html
-                  }
-                }
-              }
-              ... on PrismicShopBodyImage {
-                id
-                slice_type
-                slice_label
-                items {
-                  image {
-                    url
-                  }
+            ... on PrismicShopBodyImage {
+              id
+              slice_type
+              slice_label
+              items {
+                image {
+                  url
                 }
               }
             }
+            ... on PrismicShopBodyText {
+              id
+              slice_type
+              slice_label
+              primary {
+                text {
+                  html
+                }
+              }
+            }
+          }
           }
         }
       }
