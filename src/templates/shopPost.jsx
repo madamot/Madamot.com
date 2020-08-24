@@ -61,6 +61,16 @@ export const pageQuery = graphql`
               id
             }
             body {
+              ... on PrismicProjectBodyText {
+                id
+                slice_type
+                slice_label
+                primary {
+                  text {
+                    html
+                  }
+                }
+              }
               ... on PrismicShopBodyImage {
                 id
                 slice_type
