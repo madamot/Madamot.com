@@ -150,8 +150,8 @@
                 "type": "Image",
                 "config": {
                   "constraint": {
-                    "width": 1500,
-                    "height": 750
+                    "width": null,
+                    "height": null
                   },
                   "thumbnails": [
                     {
