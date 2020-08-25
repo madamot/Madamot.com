@@ -24,7 +24,7 @@ export default Blog
 
 export const projectsQuery = graphql`
   query blog {
-    allPrismicBlog {
+    allPrismicBlog(sort: {fields: data___date, order: DESC}) {
       edges {
         node {
           id
