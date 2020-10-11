@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import { withPreview } from 'gatsby-source-prismic'
 
 import Layout from "../components/layout"
 import Loading from '../components/Loading';
@@ -11,7 +12,7 @@ import PostBody from "../components/PostBody"
 import "../styles/templates/blogPage.css"
 
 
-export default (props) => {
+ const ProjectPost = (props) => {
   // console.log(props);
   const doc = props.data.allPrismicProject.edges.slice(0,1).pop();
 
@@ -30,6 +31,8 @@ export default (props) => {
     </Layout>
   )
 }
+
+export default withPreview(ProjectPost)
 
 export const pageQuery = graphql`
 query ProjectPostQuery($uid: String) {
