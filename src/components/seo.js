@@ -113,8 +113,10 @@ function SEO({ description, lang, meta, image: metaImage, title, pathname }) {
           },
           ]
         )
-          .concat(meta)}
-          />
+        .concat(meta)}
+    >
+      <script async defer src="https://static.cdn.prismic.io/prismic.js?new=true&repo=madamotportfolio"></script>
+    </Helmet>
         )
       }
 
