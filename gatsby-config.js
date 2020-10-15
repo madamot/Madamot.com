@@ -33,6 +33,7 @@ module.exports = {
     siteUrl: 'https://adamhorne.co.uk',
   },
   plugins: [
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
