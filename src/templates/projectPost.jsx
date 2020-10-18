@@ -99,6 +99,7 @@ query ProjectPostQuery($uid: String) {
               id
               primary {
                 link_item {
+                  raw
                   url
                 }
               }
