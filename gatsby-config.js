@@ -61,6 +61,21 @@ module.exports = {
       options: {
         repositoryName: `madamotportfolio`,
         accessToken: `${process.env.API_KEY}`,
+        linkResolver: ({ node, key, value }) => doc => {
+          if (doc.type === 'blog') {
+            return `/blog/${doc.uid}`
+          }
+
+          // URL for a product type
+          if (doc.type === 'project') {
+            return `/project/${doc.uid}`
+          }
+
+          // URL for a page type
+          if (doc.type === 'shop') {
+            return `/shop/${doc.uid}`
+          }
+        },
         schemas: {
           homepage: require('./src/schemas/home.json'),
           blog: require('./src/schemas/blog.json'),
@@ -69,8 +84,9 @@ module.exports = {
           about: require('./src/schemas/about.json'),
           shop: require('./src/schemas/shop.json'),
          // blog_post: require('./src/schemas/blog_post.json'),
-       }
-        // linkResolver: ({ node, key, value }) => post => `/${post.uid}`,
+       },
+
+
       },
     },
     {
