@@ -182,7 +182,7 @@ export const homeQuery = graphql`
                   image {
                     url
                   }
-                  date
+                  date(formatString:"Do MMM, YYYY")
                 }
                 uid
                 type
