@@ -35,7 +35,7 @@ export const shopQuery = graphql`
             title {
               text
             }
-            product_release_date(formatString: "")
+            product_release_date(formatString:"Do MMM, YYYY")
             image {
               url
             }

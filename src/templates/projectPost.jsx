@@ -53,7 +53,7 @@ query ProjectPostQuery($uid: String) {
           description {
             text
           }
-          date
+          date(formatString:"dddd Do MMMM YYYY")
           body {
             ... on PrismicProjectBodyText {
               id

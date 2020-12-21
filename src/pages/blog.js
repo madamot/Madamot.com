@@ -44,7 +44,7 @@ export const projectsQuery = graphql`
             image {
               url
             }
-            date
+            date(formatString:"Do MMM, YYYY")
           }
         }
       }
