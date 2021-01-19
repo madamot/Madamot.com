@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from "gatsby"
 import { graphql } from "gatsby"
 
@@ -13,26 +13,33 @@ import "../styles/projects.css"
 
 const Projects = ({data: {allPrismicProject}})  => {
 
-  const [filters, addFilters] = useState([1,])
+  const master = allPrismicProject.edges
 
-  const filterHandler = (id) => {
-    if (filters.includes(id)) {
-      const newArr = filters.filter(category => id !== category);
-      addFilters(newArr);
-    } else {
-      const notIn = [id, ...filters]
-      addFilters(notIn);
-    }
+  const [items, projectPostItems] = useState(allPrismicProject.edges)
 
+
+  const filterPosts = (category) => {
+    const result = master.filter(item => !category.includes(item.node.data.category.slug));
+
+    // const result = items.filter(project => project.node.data.category.slug.find(category => category.includes(project.node.data.category.slug)));
+    projectPostItems(result);
+
+    // projectPostItems({
+    //   projectPostItems: [
+    //     items.filter(edge => {
+    //       return edge.node.data.category.slug.find(year => category.includes(year))
+    //     }),
+    //   ]
+    // })
   }
 
     return (
     <Layout>
       <SEO title="Projects" />
       <h1>Projects</h1>
-      {/* <Filter handler={filterHandler} filters={filters} /> */}
+      <Filter filterPosts={filterPosts} />
       <div className="projectGrid">
-        {allPrismicProject.edges.map(post => <Post key={post.node.id} post={post.node} />)}
+        {items.map(post => <Post key={post.node.id} post={post.node} />)}
       </div>
     </Layout>
   )
@@ -41,29 +48,58 @@ export default Projects
 
 export const projectsQuery = graphql`
   query project($filters: [String]) {
-    allPrismicProject(filter: {tags: {in: $filters}}) {
-      edges {
-        node {
-          id
-          uid
-          type
-          tags
-          data {
-            category {
-              slug
-            }
-            title {
-              text
-            }
-            description {
-              text
-            }
-            image {
-              url
-            }
+    allPrismicProject(filter: {data: {category: {slug: {in: $filters}}}}) {
+    edges {
+      node {
+        id
+        uid
+        type
+        tags
+        data {
+          category {
+            slug
+          }
+          title {
+            text
+          }
+          description {
+            text
+          }
+          image {
+            url
           }
         }
       }
     }
   }
+  }
 `
+
+// export const projectsQuery = graphql`
+//   query project($filters: [String]) {
+//     allPrismicProject(filter: {data: {category: {slug: {in: $filters}}}}) {
+//     edges {
+//       node {
+//         id
+//         uid
+//         type
+//         tags
+//         data {
+//           category {
+//             slug
+//           }
+//           title {
+//             text
+//           }
+//           description {
+//             text
+//           }
+//           image {
+//             url
+//           }
+//         }
+//       }
+//     }
+//   }
+//   }
+// `
