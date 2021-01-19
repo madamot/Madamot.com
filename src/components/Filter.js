@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useStaticQuery, graphql } from "gatsby"
 
 import "../styles/filter.css"
@@ -27,6 +27,32 @@ const Filter = ( props ) => {
   const tick = "\u2705"
   const cross = "\u274C"
 
+  const [filters, addFilters] = useState([])
+
+  useEffect(() => {
+  props.filterPosts(filters);
+}, [filters]);
+
+
+    const filterHandler = async (id, filterPosts) => {
+      if (filters.includes(id)) {
+        const newArr = filters.filter(category => id != category);
+        addFilters(newArr);
+
+        // console.log(filters);
+      } else {
+        // const notIn = filters.push(id)
+        await addFilters(oldArray => [...oldArray, id]);
+        // addFilters([...filters, id]);
+        // props.filterPosts(filters);
+        // console.info(filters);
+      }
+
+    }
+
+
+
+
   return (
     <div>
       <div>
@@ -35,8 +61,8 @@ const Filter = ( props ) => {
       <div className="filterContainer">
         <ul>
           {filterQuery.allPrismicTag.edges.map( category => (
-            <li onClick={() => props.handler(category.node.data.year.text)} className="filterButton" key={category.node.id}>
-              <p>{category.node.data.year.text} {props.filters.includes(category.node.data.year.text) ? cross : tick}</p>
+            <li onClick={() => filterHandler(category.node.data.year.text)} className="filterButton" key={category.node.id}>
+              <p>{category.node.data.year.text} {filters.includes(category.node.data.year.text) ? cross : tick}</p>
             </li>
           ))}
         </ul>
