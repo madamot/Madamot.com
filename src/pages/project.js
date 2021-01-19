@@ -48,7 +48,7 @@ export default Projects
 
 export const projectsQuery = graphql`
   query project($filters: [String]) {
-    allPrismicProject(filter: {data: {category: {slug: {in: $filters}}}}) {
+    allPrismicProject(filter: {data: {category: {slug: {in: $filters}}}}, sort: {fields: data___date, order: DESC}) {
     edges {
       node {
         id
