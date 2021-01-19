@@ -55,9 +55,6 @@ const Filter = ( props ) => {
 
   return (
     <div>
-      <div>
-        <h3>Filter by:</h3>
-      </div>
       <div className="filterContainer">
         <ul>
           {filterQuery.allPrismicTag.edges.map( category => (
