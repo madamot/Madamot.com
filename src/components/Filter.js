@@ -62,7 +62,7 @@ const Filter = ( props ) => {
         <ul>
           {filterQuery.allPrismicTag.edges.map( category => (
             <li onClick={() => filterHandler(category.node.data.year.text)} className="filterButton" key={category.node.id}>
-              <p>{category.node.data.year.text} {filters.includes(category.node.data.year.text) ? cross : tick}</p>
+              {category.node.data.year.text} {filters.includes(category.node.data.year.text) ? cross : tick}
             </li>
           ))}
         </ul>
