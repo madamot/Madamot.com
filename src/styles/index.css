@@ -72,7 +72,7 @@ html {
 
 .projectGridHome {
   display: grid;
-  grid-template-columns: 1fr 0.5fr 0.5fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto auto;
   gap: 1px 1px;
   grid-auto-rows: min-content;
